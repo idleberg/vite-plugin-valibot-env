@@ -14,7 +14,7 @@
 
 ```js
 import { defineConfig } from 'vite';
-import v from 'valibot';
+import * as v from 'valibot';
 import valibot from 'vite-plugin-valibot-env';
 
 const envSchema = v.object({
