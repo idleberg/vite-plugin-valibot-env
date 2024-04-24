@@ -26,7 +26,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 function logIssue(issue: SchemaIssue | undefined) {
 	if (!issue?.path) {
 		return
-	};
+	}
 
 	console.error(logSymbols.error, yellow(String(issue.path[0]?.key || '<undefined>')), issue.message);
 }
