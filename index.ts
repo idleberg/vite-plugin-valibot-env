@@ -7,7 +7,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 	return {
 		name: 'valibot-env',
 		config(userConfig, { mode }) {
-			const env = loadEnv(mode, process.cwd(), '')
+			const env = loadEnv(mode, process.cwd())
 			const { issues, success } = safeParse(schema, env);
 
 			if (!success) {
