@@ -7,7 +7,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 	return {
 		name: 'valibot-env',
 		config(userConfig, { mode }) {
-			const env = loadEnv(mode, process.cwd())
+			const env = loadEnv(mode, process.cwd(), '')
 			const { issues, success } = safeParse(schema, env);
 
 			if (!success) {
@@ -25,11 +25,11 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 }
 
 function logIssue(issue: SchemaIssue | undefined) {
-	if (!issue?.path) {
+	if (!issue?.path?.length || !issue.path[0].key) {
 		return
 	}
 
-	const label = kleur.bgRed(` ${String(issue.path[0]?.key || '<undefined>')} `);
+	const label = kleur.bgRed(` ${issue.path[0].key} `);
 
 	console.error(logSymbols.error, label, issue.message);
 }
