@@ -1,6 +1,6 @@
 import { Plugin, loadEnv } from 'vite';
 import { safeParse, type ObjectSchema, type SchemaIssue } from 'valibot';
-import { yellow } from 'kleur';
+import { bgRed } from 'kleur';
 import logSymbols from 'log-symbols';
 
 export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(schema: T): Plugin {
@@ -15,6 +15,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 					logIssue(issue)
 				}
 
+				console.log(/* let it breathe */)
 				process.exit(1);
 			}
 
@@ -28,5 +29,7 @@ function logIssue(issue: SchemaIssue | undefined) {
 		return
 	}
 
-	console.error(logSymbols.error, yellow(String(issue.path[0]?.key || '<undefined>')), issue.message);
+	const label = bgRed(` ${String(issue.path[0]?.key || '<undefined>')} `);
+
+	console.error(logSymbols.error, label, issue.message);
 }
