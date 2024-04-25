@@ -29,7 +29,7 @@ function logIssue(issue: SchemaIssue | undefined) {
 		return
 	}
 
-	const label = kleur.bgYellow(` ${String(issue.path[0]?.key || '<undefined>')} `);
+	const label = kleur.bgRed(` ${String(issue.path[0]?.key || '<undefined>')} `);
 
 	console.error(logSymbols.error, label, issue.message);
 }
