@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/idleberg/vite-plugin-valibot-env"
   },
-	"type": "module",
+  "type": "module",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "engines": {
@@ -20,8 +20,8 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm-run-all --parallel build:*",
-    "build:esm": "tsup index.ts --format esm --platform node --dts",
+    "build": "tsup",
+    "dev": "npm run build -- --watch",
     "lint": "eslint index.ts --ignore-path .gitignore",
     "prepack": "npm run build",
     "prepare": "husky install",
