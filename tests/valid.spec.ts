@@ -47,7 +47,6 @@ const validEnvironmentVariables = {
 	VALID_MAC: '00:1A:2B:3C:4D:5E',
 	VALID_MAC48: '00:1A:2B:3C:4D:5E',
 	VALID_MAC64: '00:1A:2B:FF:FE:3C:4D:5E',
-	// VALID_MIMETYPE: 'application/json',
 	VALID_OCTAL: '34',
 	VALID_STRING: 'test',
 	VALID_ULID: '01ARZ3NDEKTSV4RRFFQ69G5FAV',
