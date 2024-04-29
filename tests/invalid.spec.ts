@@ -49,7 +49,6 @@ const invalidEnvironmentVariables = {
 	INVALID_MAC: 'MAC',
 	INVALID_MAC48: '48-bit MAC',
 	INVALID_MAC64: '64-bit MAC',
-	// INVALID_MIMETYPE: 'MIME type',
 	INVALID_OCTAL: 'octal',
 	// INVALID_STRING: 'string',
 	INVALID_ULID: 'ULID',

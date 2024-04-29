@@ -43,7 +43,6 @@ const envSchema = v.object({
 	VALID_MAC: v.string([v.mac()]),
 	VALID_MAC48: v.string([v.mac48()]),
 	VALID_MAC64: v.string([v.mac64()]),
-	// VALID_MIMETYPE: v.string([v.mimeType()]),
 	VALID_OCTAL: v.string([v.octal()]),
 	VALID_STRING: v.string(),
 	VALID_ULID: v.string([v.ulid()]),
