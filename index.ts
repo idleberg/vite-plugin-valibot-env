@@ -1,6 +1,6 @@
 import { Plugin, loadEnv } from 'vite';
 import { safeParse, type ObjectSchema, type SchemaIssue } from 'valibot';
-import { bgRed } from 'kleur';
+import { bgRed } from 'kleur/colors';
 import logSymbols from 'log-symbols';
 
 export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(schema: T): Plugin {
