@@ -1,13 +1,20 @@
-import { Plugin, loadEnv } from 'vite';
-import { safeParse, type ObjectSchema, type SchemaIssue } from 'valibot';
 import { bgRed } from 'kleur/colors';
+import { loadEnv, normalizePath, type Plugin } from 'vite';
+import { resolve } from 'node:path';
+import { safeParse, type ObjectSchema, type SchemaIssue } from 'valibot';
 import logSymbols from 'log-symbols';
 
 export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(schema: T): Plugin {
 	return {
 		name: 'valibot-env',
 		config(userConfig, { mode }) {
-			const env = loadEnv(mode, process.cwd(), userConfig.envPrefix)
+			const rootDir = userConfig.root || process.cwd();
+
+			const envDir = userConfig.envDir
+				? normalizePath(resolve(rootDir, userConfig.envDir))
+				: rootDir
+
+			const env = loadEnv(mode, envDir, userConfig.envPrefix)
 			const { issues, success } = safeParse(schema, env);
 
 			if (!success) {
