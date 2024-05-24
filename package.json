@@ -25,7 +25,8 @@
     "lint": "eslint index.ts --ignore-path .gitignore",
     "prepack": "npm run build",
     "prepare": "husky install",
-    "release": "np --no-yarn --any-branch",
+    "publish:npm": "np --no-yarn --any-branch",
+    "publish:jsr": "jsr publish",
     "test": "exit 0"
   },
   "keywords": [
@@ -42,6 +43,7 @@
     "@typescript-eslint/parser": "^7.10.0",
     "eslint": "^8.50.0",
     "husky": "^9.0.11",
+    "jsr": "^0.12.4",
     "lint-staged": "^15.2.4",
     "np": "^10.0.5",
     "npm-run-all2": "^6.2.0",
