@@ -1,0 +1,18 @@
+name: Publish to JSR
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'jsr.json'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+      - run: npx jsr publish
