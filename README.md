@@ -43,7 +43,7 @@ Default: `false`
 Setting this to `true` will also validate unprefixed environment variables.
 
 > [!TIP]
-> Vite uses a [prefix](https://vitejs.dev/config/shared-options.html#envprefix) to prevent leaking all environment variables into your code. However, there might be use cases were you want validate unprefixed environment variables as well, e.g. `HOST` and `PORT` to configure the Vite server.
+> Vite uses a [prefix](https://vitejs.dev/config/shared-options.html#envprefix) to prevent leaking all environment variables into your code. However, there might be use cases where you want validate unprefixed environment variables as well, e.g. `HOST` and `PORT` to configure the Vite server.
 
 ## License
 
