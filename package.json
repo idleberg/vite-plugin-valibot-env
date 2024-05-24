@@ -26,7 +26,6 @@
     "prepack": "npm run build",
     "prepare": "husky",
     "publish:npm": "np --no-yarn --any-branch",
-    "publish:jsr": "jsr publish",
     "test": "uvu tests -r tsm --ignore \"fixtures\""
   },
   "keywords": [
@@ -45,7 +44,6 @@
     "eslint": "^8.50.0",
     "execa": "^8.0.1",
     "husky": "^9.0.11",
-    "jsr": "^0.12.4",
     "lint-staged": "^15.2.4",
     "np": "^10.0.5",
     "npm-run-all2": "^6.2.0",
