@@ -8,7 +8,7 @@
 
 ## Installation
 
-`npm install -D vite-plugin-valibot-env`
+`npm install -D vite-plugin-valibot-env valibot`
 
 ## Usage
 
