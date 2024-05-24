@@ -24,7 +24,7 @@
     "dev": "npm run build -- --watch",
     "lint": "eslint index.ts --ignore-path .gitignore",
     "prepack": "npm run build",
-    "prepare": "husky install",
+    "prepare": "husky",
     "publish:npm": "np --no-yarn --any-branch",
     "publish:jsr": "jsr publish",
     "test": "exit 0"
