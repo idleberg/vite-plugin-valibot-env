@@ -31,7 +31,9 @@ export default defineConfig({
 });
 ```
 
-Usage: `valibot(schema, options?)`
+### API
+
+`valibot(schema, options?)`
 
 ### Options
 
