@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'jsr.json'
+  workflow_dispatch:
 
 jobs:
   publish:
@@ -15,4 +16,5 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+      - run: corepack enable && pnpm i
       - run: npx jsr publish
