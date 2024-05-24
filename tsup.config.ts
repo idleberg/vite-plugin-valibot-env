@@ -4,7 +4,7 @@ export default defineConfig((options) => {
 	return {
 		target: 'esnext',
 		clean: true,
-		dts: !options.watch,
+		dts: true,
 		entry: ['index.ts'],
 		format: 'esm',
 		minify: !options.watch,
