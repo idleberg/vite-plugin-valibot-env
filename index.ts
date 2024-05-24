@@ -8,6 +8,12 @@ type PluginOptions = {
 	ignoreEnvPrefix: boolean,
 };
 
+/**
+ * Exports a Vite plugin that validates environment variables against a schema.
+ * @param {ObjectSchema} schema
+ * @param {PluginOptions} options
+ * @returns {Plugin}
+ */
 export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(schema: T, options: PluginOptions = {
 	ignoreEnvPrefix: false
 }): Plugin {
@@ -41,6 +47,11 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 	}
 }
 
+/**
+ * Logger for printing well-formed schema issues.
+ * @param {SchemaIssue} issue
+ * @returns
+ */
 function logIssue(issue: SchemaIssue) {
 	if (!issue.path) {
 		return
