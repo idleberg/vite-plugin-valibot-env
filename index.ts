@@ -4,7 +4,13 @@ import { resolve } from 'node:path';
 import { safeParse, type ObjectSchema, type SchemaIssue } from 'valibot';
 import logSymbols from 'log-symbols';
 
-export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(schema: T): Plugin {
+type PluginOptions = {
+	ignoreEnvPrefix: boolean
+};
+
+export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(schema: T, options: PluginOptions = {
+	ignoreEnvPrefix: false
+}): Plugin {
 	return {
 		name: 'valibot-env',
 		config(userConfig, { mode }) {
@@ -14,7 +20,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 				? normalizePath(resolve(rootDir, userConfig.envDir))
 				: rootDir
 
-			const env = loadEnv(mode, envDir, userConfig.envPrefix)
+			const env = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
 			const { issues, success } = safeParse(schema, env);
 
 			if (!success) {
