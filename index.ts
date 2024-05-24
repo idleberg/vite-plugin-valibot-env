@@ -5,7 +5,7 @@ import { safeParse, type ObjectSchema, type SchemaIssue } from 'valibot';
 import logSymbols from 'log-symbols';
 
 type PluginOptions = {
-	ignoreEnvPrefix: boolean
+	ignoreEnvPrefix: boolean,
 };
 
 export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(schema: T, options: PluginOptions = {
@@ -25,7 +25,11 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 
 			if (!success) {
 				for (const issue of issues) {
-					logIssue(issue)
+					if (typeof issue === 'undefined') {
+						continue;
+					}
+
+					logIssue(issue);
 				}
 
 				console.log(/* let it breathe */)
@@ -37,8 +41,8 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 	}
 }
 
-function logIssue(issue: SchemaIssue | undefined) {
-	if (!issue?.path) {
+function logIssue(issue: SchemaIssue) {
+	if (!issue.path) {
 		return
 	}
 

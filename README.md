@@ -12,6 +12,8 @@
 
 ## Usage
 
+**Example**
+
 ```js
 import { defineConfig } from 'vite';
 import * as v from 'valibot';
