@@ -14,7 +14,7 @@
 
 Let's start with very a basic example
 
-```js
+```ts
 import { defineConfig } from 'vite';
 import * as v from 'valibot';
 import valibot from 'vite-plugin-valibot-env';

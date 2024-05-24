@@ -13,6 +13,24 @@ type PluginOptions = {
  * @param {ObjectSchema} schema
  * @param {PluginOptions} options
  * @returns {Plugin}
+ *
+ * @example
+ * ```ts
+ * import { defineConfig } from 'vite';
+ * import * as v from 'valibot';
+ * import valibot from 'vite-plugin-valibot-env';
+ *
+ * const envSchema = v.object({
+ * 	VITE_API_ENDPOINT: v.string([v.url()]),
+ * 	VITE_ENABLE_LOGGING: v.boolean(),
+ * });
+ *
+ * export default defineConfig({
+ * 	plugins: [
+ * 		valibot(envSchema),
+ * 	]
+ * });
+ * ```
  */
 export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(schema: T, options: PluginOptions = {
 	ignoreEnvPrefix: false
