@@ -5,12 +5,12 @@ import { safeParse, type ObjectSchema, type SchemaIssue } from 'valibot';
 import logSymbols from 'log-symbols';
 
 type PluginOptions = {
-	ignoreEnvPrefix: boolean,
+	ignoreEnvPrefix: boolean;
 };
 
 // Helpers for Deno compatibility
 declare const Deno: any;
-const isDeno = typeof Deno !== "undefined" && Deno?.version?.deno;
+const isDeno = typeof Deno !== 'undefined' && Deno?.version?.deno;
 
 /**
  * Exports a Vite plugin that validates environment variables against a schema.
@@ -36,17 +36,18 @@ const isDeno = typeof Deno !== "undefined" && Deno?.version?.deno;
  * });
  * ```
  */
-export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(schema: T, options: PluginOptions = {
-	ignoreEnvPrefix: false
-}): Plugin {
+export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(
+	schema: T,
+	options: PluginOptions = {
+		ignoreEnvPrefix: false,
+	},
+): Plugin {
 	return {
 		name: 'valibot-env',
 		config(userConfig, { mode }) {
 			const rootDir = userConfig.root || _process.cwd();
 
-			const envDir = userConfig.envDir
-				? normalizePath(resolve(rootDir, userConfig.envDir))
-				: rootDir
+			const envDir = userConfig.envDir ? normalizePath(resolve(rootDir, userConfig.envDir)) : rootDir;
 
 			const env = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
 			const { issues, success } = safeParse(schema, env);
@@ -64,8 +65,8 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 			}
 
 			return userConfig;
-		}
-	}
+		},
+	};
 }
 
 /**
@@ -75,7 +76,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
  */
 function logIssue(issue: SchemaIssue) {
 	if (!issue.path) {
-		return
+		return;
 	}
 
 	const label = bgRed(` ${issue.path[0].key} `);
@@ -88,12 +89,12 @@ const _process = {
 	 * Wrapper for `process.cwd()` and `Deno.cwd()`
 	 * @returns {string}
 	 */
-	cwd: (): string => isDeno ? Deno.cwd() : process.cwd(),
+	cwd: (): string => (isDeno ? Deno.cwd() : process.cwd()),
 
 	/**
 	 * Wrapper for `process.exit()` and `Deno.exit()`
 	 * @param {number} code
 	 * @returns {never}
 	 */
-	exit: (code?: number): never => isDeno ? Deno.exit(code) as never : process.exit(code),
+	exit: (code?: number): never => (isDeno ? (Deno.exit(code) as never) : process.exit(code)),
 };
