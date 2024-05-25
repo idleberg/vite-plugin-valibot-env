@@ -4,6 +4,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',
+		'unicorn',
   ],
   extends: [
     'eslint:recommended',
@@ -13,11 +14,9 @@ module.exports = {
 		Deno: 'readonly'
 	},
   rules: {
-		"@typescript-eslint/no-explicit-any": "off"
+		'@typescript-eslint/no-explicit-any': 'off',
+		'unicorn/prefer-node-protocol': 'error',
 	},
-  ignorePatterns: [
-    'test/**/*'
-  ],
   overrides: [
     {
       files: [
