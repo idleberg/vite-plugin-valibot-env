@@ -5,6 +5,7 @@
 	"publish": {
 		"include": [
 			"index.ts",
+			"jsr.json",
 			"LICENSE",
 			"README.md"
 		]
