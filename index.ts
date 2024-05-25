@@ -92,7 +92,7 @@ const _process = {
 			return Deno.cwd();
 		}
 
-		// @ts-expect-error Prevents `deno publish` from failing
+		// @ts-ignore
 		return process.cwd();
 	},
 
@@ -106,7 +106,7 @@ const _process = {
 			Deno.exit(code) as never;
 		}
 
-		// @ts-expect-error Prevents `deno publish` from failing
+		// @ts-ignore
 		process.exit(code);
 	},
 };
