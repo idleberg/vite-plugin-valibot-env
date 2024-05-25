@@ -1,4 +1,4 @@
-name: 'CI: NodeJS'
+name: 'CI: Bun'
 
 on:
   push:
