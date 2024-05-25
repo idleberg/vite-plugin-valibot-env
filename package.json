@@ -25,6 +25,7 @@
     "lint": "eslint index.ts --ignore-path .gitignore",
     "prepack": "npm run build",
     "prepare": "husky",
+    "publish:jsr": "deno publish",
     "publish:npm": "np --no-yarn --any-branch",
     "test": "uvu tests -r tsm --ignore \"fixtures\""
   },
