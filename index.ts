@@ -101,9 +101,9 @@ const _process = {
 	 * @param {number} code
 	 * @returns {never}
 	 */
-	exit: (code?: number): never => {
+	exit: (code?: number) => {
 		if (isDeno) {
-			Deno.exit(code) as never;
+			Deno.exit(code);
 		}
 
 		// @ts-ignore
