@@ -5,12 +5,7 @@ import { v4 as uuidv4 } from '@lukeed/uuid';
 import * as assert from 'uvu/assert';
 import stripAnsi from 'strip-ansi';
 
-const viteArgs = [
-	'vite',
-	'build',
-	'--config',
-	'vite-invalid.config.ts'
-];
+const viteArgs = ['vite', 'build', '--config', 'vite-invalid.config.ts'];
 
 const invalidEnvironmentVariables = {
 	VITE_INVALID_BIC: 'BIC',
@@ -64,8 +59,8 @@ Object.entries(invalidEnvironmentVariables).forEach(([key, type]) => {
 			await execa('npx', viteArgs, {
 				cwd: resolve(process.cwd(), 'tests/fixtures'),
 				env: {
-					[key]: uuid
-				}
+					[key]: uuid,
+				},
 			});
 		} catch (error) {
 			const stderr = stripAnsi((error as ExecaError).stderr);

@@ -10,7 +10,7 @@ const envSchema = v.object({
 export default defineConfig({
 	plugins: [
 		valibotPlugin(envSchema, {
-			ignoreEnvPrefix: true
-		})
-	]
+			ignoreEnvPrefix: true,
+		}),
+	],
 });

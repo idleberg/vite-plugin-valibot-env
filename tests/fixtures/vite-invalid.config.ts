@@ -35,11 +35,7 @@ const envSchema = v.object({
 	VITE_INVALID_ISOTIMESECOND: v.string([v.isoTimeSecond()]),
 	VITE_INVALID_ISOTIMESTAMP: v.string([v.isoTimestamp()]),
 	VITE_INVALID_ISOWEEK: v.string([v.isoWeek()]),
-	VITE_INVALID_LITERAL: v.union([
-		v.literal('a'),
-		v.literal('b'),
-		v.literal('c'),
-	]),
+	VITE_INVALID_LITERAL: v.union([v.literal('a'), v.literal('b'), v.literal('c')]),
 	VITE_INVALID_MAC: v.string([v.mac()]),
 	VITE_INVALID_MAC48: v.string([v.mac48()]),
 	VITE_INVALID_MAC64: v.string([v.mac64()]),
@@ -51,7 +47,5 @@ const envSchema = v.object({
 });
 
 export default defineConfig({
-	plugins: [
-		valibotPlugin(envSchema)
-	]
+	plugins: [valibotPlugin(envSchema)],
 });

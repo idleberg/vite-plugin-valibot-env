@@ -3,12 +3,7 @@ import { resolve } from 'node:path';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
-const viteArgs = [
-	'vite',
-	'build',
-	'--config',
-	'vite-valid.config.ts'
-];
+const viteArgs = ['vite', 'build', '--config', 'vite-valid.config.ts'];
 
 const validEnvironmentVariables = {
 	VITE_VALID_BIC: 'BOFAUS3NXXX',
@@ -25,8 +20,10 @@ const validEnvironmentVariables = {
 	VITE_VALID_HASH_RIPEMD160: '6b821cc6af170f0eab424f9c644b2dd0b4e7dc08',
 	VITE_VALID_HASH_SHA1: '7b4758d4baa20873585b9597c7cb9ace2d690ab8',
 	VITE_VALID_HASH_SHA256: '37980c33951de6b0e450c3701b219bfeee930544705f637cd1158b63827bb390',
-	VITE_VALID_HASH_SHA384: '11f799113b85b59bfde24e9d473b752085eac02603d0cf5ec927753f575430e42630f685607997636cafcd3be3b22a04',
-	VITE_VALID_HASH_SHA512: '959c0bdfa9877d3466c5848f55264f72f132c657b002b79fda65dbe36c67f4bb3d2a3e2e9925cb5896a53c76169c5bb71b7853bd90192068dc77f4b20159a1d8',
+	VITE_VALID_HASH_SHA384:
+		'11f799113b85b59bfde24e9d473b752085eac02603d0cf5ec927753f575430e42630f685607997636cafcd3be3b22a04',
+	VITE_VALID_HASH_SHA512:
+		'959c0bdfa9877d3466c5848f55264f72f132c657b002b79fda65dbe36c67f4bb3d2a3e2e9925cb5896a53c76169c5bb71b7853bd90192068dc77f4b20159a1d8',
 	VITE_VALID_HASH_TIGER128: 'bbd72efa9e5588ae0363038ba6006d24',
 	VITE_VALID_HASH_TIGER160: 'bbd72efa9e5588ae0363038ba6006d245d390d74',
 	VITE_VALID_HEXADECIMAL: 'DEADBEEF',
@@ -58,7 +55,7 @@ test(`Testing valid environment variables`, async () => {
 	try {
 		await execa('npx', viteArgs, {
 			cwd: resolve(process.cwd(), 'tests/fixtures'),
-			env: validEnvironmentVariables
+			env: validEnvironmentVariables,
 		});
 	} catch (error) {
 		throw new Error((error as ExecaError).message);
