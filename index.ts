@@ -87,12 +87,26 @@ const _process = {
 	 * Wrapper for `process.cwd()` and `Deno.cwd()`
 	 * @returns {string}
 	 */
-	cwd: (): string => (isDeno ? Deno.cwd() : process.cwd()),
+	cwd: (): string => {
+		if (isDeno) {
+			return Deno.cwd();
+		}
+
+		// @ts-expect-error Prevents `deno publish` from failing
+		return process.cwd();
+	},
 
 	/**
 	 * Wrapper for `process.exit()` and `Deno.exit()`
 	 * @param {number} code
 	 * @returns {never}
 	 */
-	exit: (code?: number): never => (isDeno ? (Deno.exit(code) as never) : process.exit(code)),
+	exit: (code?: number): never => {
+		if (isDeno) {
+			Deno.exit(code) as never;
+		}
+
+		// @ts-expect-error Prevents `deno publish` from failing
+		process.exit(code);
+	},
 };
