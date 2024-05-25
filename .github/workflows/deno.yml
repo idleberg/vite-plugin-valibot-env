@@ -1,4 +1,4 @@
-name: CI
+name: 'CI: Deno'
 
 on:
   push:
@@ -32,9 +32,9 @@ jobs:
       with:
         fetch-depth: 10
 
-    - uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 # v4.0.1
+    - uses: denoland/setup-deno@041b854f97b325bd60e53e9dc2de9cb9f9ac0cba # v1.1.4
       with:
-        node-version: ${{ matrix.node-version }}
+        deno-version: v1.x
 
     - name: Enable Corepack
       run: corepack enable
@@ -56,10 +56,4 @@ jobs:
       run: pnpm install --frozen-lockfile --strict-peer-dependencies
 
     - name: Lint Source
-      run: pnpm run --if-present lint
-
-    - name: Build Source
-      run: pnpm run --if-present build
-
-    - name: Run Tests
-      run: pnpm run --if-present test
+      run:  deno lint  --rules-exclude=no-explicit-any index.ts
