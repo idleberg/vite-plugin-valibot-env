@@ -3,7 +3,7 @@ module.exports = {
 	root: true,
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint', 'unicorn'],
-	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+	extends: ['eslint:recommended', 'plugin:jsonc/recommended-with-json', 'plugin:@typescript-eslint/recommended'],
 	globals: {
 		Deno: 'readonly',
 	},
@@ -16,8 +16,8 @@ module.exports = {
 		{
 			files: ['tsconfig.json'],
 			rules: {
-				'json/*': ['error', 'allowComments'],
-			},
+				'jsonc/no-comments': 'off'
+			}
 		},
 	],
 };

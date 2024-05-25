@@ -43,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^7.10.0",
     "@typescript-eslint/parser": "^7.10.0",
     "eslint": "^8.50.0",
+    "eslint-plugin-jsonc": "^2.16.0",
     "eslint-plugin-unicorn": "^53.0.0",
     "execa": "^8.0.1",
     "husky": "^9.0.11",
