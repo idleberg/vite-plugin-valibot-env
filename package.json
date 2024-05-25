@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-valibot-env",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A Vite plugin to validate environment variables against a Valibot schema",
   "license": "MIT",
   "author": "Jan T. Sott",
@@ -48,7 +48,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.4",
     "np": "^10.0.5",
-		"prettier": "^3.2.5",
+    "prettier": "^3.2.5",
     "strip-ansi": "^7.1.0",
     "tsm": "^2.3.0",
     "tsup": "^8.0.2",
@@ -63,9 +63,9 @@
   },
   "lint-staged": {
     "*.ts": [
-			"eslint --cache --fix",
-			"prettier --cache --write"
-		]
+      "eslint --cache --fix",
+      "prettier --cache --write"
+    ]
   },
   "packageManager": "pnpm@9.1.2+sha512.127dc83b9ea10c32be65d22a8efb4a65fb952e8fefbdfded39bdc3c97efc32d31b48b00420df2c1187ace28c921c902f0cb5a134a4d032b8b5295cbfa2c681e2"
 }
