@@ -4,10 +4,9 @@
 
 [![License](https://img.shields.io/github/license/idleberg/vite-plugin-valibot-env?color=blue&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/blob/main/LICENSE)
 [![Version: npm](https://img.shields.io/npm/v/vite-plugin-valibot-env?logo=npm&logoColor=white&style=for-the-badge)](https://www.npmjs.org/package/vite-plugin-valibot-env)
-[![Version: jsr](https://img.shields.io/jsr/v/@idleberg/vite-plugin-valibot-env?logo=jsr&logoColor=white&style=for-the-badge)](https://jsr.io/@idleberg/vite-plugin-valibot-env)  
+[![Version: jsr](https://img.shields.io/jsr/v/@idleberg/vite-plugin-valibot-env?logo=jsr&logoColor=white&style=for-the-badge)](https://jsr.io/@idleberg/vite-plugin-valibot-env)
 [![CI: Node](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/ci-node.yml?logo=nodedotjs&logoColor=white&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions)
 [![CI: Deno](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/ci-deno.yml?logo=deno&logoColor=white&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions)
-[![CI: Bun](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/ci-bun.yml?logo=bun&logoColor=white&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions)
 
 ## Installation
 
