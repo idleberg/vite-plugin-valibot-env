@@ -50,19 +50,19 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 			const env = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
 			const { issues, success } = safeParse(schema, env);
 
-			if (!success) {
-				for (const issue of issues) {
-					if (typeof issue === 'undefined') {
-						continue;
-					}
-
-					logIssue(issue);
-				}
-
-				_process.exit(1);
+			if (success) {
+				return userConfig;
 			}
 
-			return userConfig;
+			for (const issue of issues) {
+				if (typeof issue === 'undefined') {
+					continue;
+				}
+
+				logIssue(issue);
+			}
+
+			_process.exit(1);
 		},
 	};
 }
