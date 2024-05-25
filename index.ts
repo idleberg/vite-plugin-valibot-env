@@ -84,6 +84,16 @@ function logIssue(issue: SchemaIssue) {
 }
 
 const _process = {
+	/**
+	 * Wrapper for `process.cwd()` and `Deno.cwd()`
+	 * @returns {string}
+	 */
 	cwd: (): string => isDeno ? Deno.cwd() : process.cwd(),
-	exit: (code?: number) => isDeno ? Deno.exit(code) : process.exit(code),
+
+	/**
+	 * Wrapper for `process.exit()` and `Deno.exit()`
+	 * @param {number} code
+	 * @returns {never}
+	 */
+	exit: (code?: number): never => isDeno ? Deno.exit(code) as never : process.exit(code),
 };
