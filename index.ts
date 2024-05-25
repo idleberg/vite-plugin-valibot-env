@@ -8,6 +8,10 @@ type PluginOptions = {
 	ignoreEnvPrefix: boolean,
 };
 
+// Helpers for Deno compatibility
+declare const Deno: any;
+const isDeno = typeof Deno !== "undefined" && Deno?.version?.deno;
+
 /**
  * Exports a Vite plugin that validates environment variables against a schema.
  * @param {ObjectSchema} schema
@@ -38,7 +42,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 	return {
 		name: 'valibot-env',
 		config(userConfig, { mode }) {
-			const rootDir = userConfig.root || process.cwd();
+			const rootDir = userConfig.root || _process.cwd();
 
 			const envDir = userConfig.envDir
 				? normalizePath(resolve(rootDir, userConfig.envDir))
@@ -56,8 +60,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 					logIssue(issue);
 				}
 
-				console.log(/* let it breathe */)
-				process.exit(1);
+				_process.exit(1);
 			}
 
 			return userConfig;
@@ -79,3 +82,8 @@ function logIssue(issue: SchemaIssue) {
 
 	console.error(logSymbols.error, label, issue.message);
 }
+
+const _process = {
+	cwd: (): string => isDeno ? Deno.cwd() : process.cwd(),
+	exit: (code?: number) => isDeno ? Deno.exit(code) : process.exit(code),
+};
