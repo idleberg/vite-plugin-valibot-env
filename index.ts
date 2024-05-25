@@ -46,9 +46,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 		name: 'valibot-env',
 		config(userConfig, { mode }) {
 			const rootDir = userConfig.root || _process.cwd();
-
 			const envDir = userConfig.envDir ? normalizePath(resolve(rootDir, userConfig.envDir)) : rootDir;
-
 			const env = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
 			const { issues, success } = safeParse(schema, env);
 
