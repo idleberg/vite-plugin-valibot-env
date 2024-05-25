@@ -8,8 +8,10 @@ module.exports = {
 		Deno: 'readonly',
 	},
 	rules: {
-		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/ban-ts-comment': 'off',
+		'@typescript-eslint/no-explicit-any': 'off',
+		'unicorn/filename-case': 'error',
+		'unicorn/new-for-builtins': 'error',
 		'unicorn/prefer-node-protocol': 'error',
 	},
 	overrides: [

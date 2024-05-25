@@ -22,7 +22,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "npm run build -- --watch",
-    "lint": "eslint index.ts --ignore-path .gitignore",
+    "lint": "eslint **/*.json **/*.ts --ignore-path .gitignore",
     "prepack": "npm run build",
     "prepare": "husky",
     "publish:jsr": "deno publish",
