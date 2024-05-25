@@ -3,9 +3,9 @@
 > A Vite plugin to validate environment variables against a Valibot schema.
 
 [![License](https://img.shields.io/github/license/idleberg/vite-plugin-valibot-env?color=blue&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/blob/main/LICENSE)
-[![Version: npm](https://img.shields.io/npm/v/vite-plugin-valibot-env?style=for-the-badge)](https://www.npmjs.org/package/vite-plugin-valibot-env)
-[![CI: Node](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/ci-node.yml?style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions)
-[![CI: Deno](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/ci-deno.yml?style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions)
+[![Version: npm](https://img.shields.io/npm/v/vite-plugin-valibot-env?logo=npm&logoColor=white&style=for-the-badge)](https://www.npmjs.org/package/vite-plugin-valibot-env)
+[![CI: Node](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/ci-node.yml?logo=nodedotjs&logoColor=white&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions)
+[![CI: Deno](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/ci-deno.yml?logo=deno&logoColor=white&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions)
 
 ## Installation
 
