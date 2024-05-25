@@ -1,5 +1,5 @@
 import { execa, type ExecaError } from 'execa';
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
