@@ -55,3 +55,6 @@ jobs:
 
     - name: Lint Source
       run: deno lint  --rules-exclude=no-explicit-any --ignore=node_modules **/*.ts
+
+    - name: Try Publish
+      run: deno publish --dry-run
