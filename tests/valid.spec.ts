@@ -6,7 +6,7 @@ import * as assert from 'uvu/assert';
 
 const isDeno = typeof Deno !== 'undefined' && Deno?.version?.deno;
 const command = isDeno ? 'deno' : 'npx';
-const viteArgs = ['vite', 'build', '--config', 'vite-valid.config.ts'];
+const viteArgs = ['build', '--config', 'vite-valid.config.ts'];
 
 if (isDeno) {
 	viteArgs.unshift('run', '--allow-all', 'npm:vite');
