@@ -50,6 +50,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
 
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile --strict-peer-dependencies
+
     - name: Lint Source
       run: deno lint  --rules-exclude=no-explicit-any --ignore=node_modules **/*.ts
 
