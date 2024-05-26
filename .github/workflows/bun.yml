@@ -1,4 +1,4 @@
-name: 'Running tests on Bun'
+name: 'Run tests on Bun'
 
 on:
   push:
