@@ -10,13 +10,13 @@ on:
     - 'package.json'
     - 'pnpm-lock.yaml'
   pull_request:
-      paths:
-      - '.github/**'
-      - 'tests/**'
-      - 'types/**'
-      - 'index.ts'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
+    paths:
+    - '.github/**'
+    - 'tests/**'
+    - 'types/**'
+    - 'index.ts'
+    - 'package.json'
+    - 'pnpm-lock.yaml'
   workflow_dispatch:
 
 jobs:
