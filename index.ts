@@ -1,3 +1,4 @@
+import { cwd, exit } from 'node:process';
 import { bgRed } from 'kleur/colors';
 import { loadEnv, normalizePath, type Plugin } from 'vite';
 import { resolve } from 'node:path';
@@ -7,10 +8,6 @@ import logSymbols from 'log-symbols';
 type PluginOptions = {
 	ignoreEnvPrefix: boolean;
 };
-
-// Helpers for Deno compatibility
-declare const Deno: any;
-const isDeno = typeof Deno !== 'undefined' && Deno?.version?.deno;
 
 /**
  * Exports a Vite plugin that validates environment variables against a schema.
@@ -45,7 +42,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 	return {
 		name: 'valibot-env',
 		config(userConfig, { mode }) {
-			const rootDir = userConfig.root || _process.cwd();
+			const rootDir = userConfig.root || cwd();
 			const envDir = userConfig.envDir ? normalizePath(resolve(rootDir, userConfig.envDir)) : rootDir;
 			const env = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
 			const { issues, success } = safeParse(schema, env);
@@ -62,7 +59,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 				logIssue(issue);
 			}
 
-			_process.exit(1);
+			exit(1);
 		},
 	};
 }
@@ -81,32 +78,3 @@ function logIssue(issue: SchemaIssue) {
 
 	console.error(logSymbols.error, label, issue.message);
 }
-
-const _process = {
-	/**
-	 * Wrapper for `process.cwd()` and `Deno.cwd()`
-	 * @returns {string}
-	 */
-	cwd: (): string => {
-		if (isDeno) {
-			return Deno.cwd();
-		}
-
-		// @ts-ignore
-		return process.cwd();
-	},
-
-	/**
-	 * Wrapper for `process.exit()` and `Deno.exit()`
-	 * @param {number} code
-	 * @returns {never}
-	 */
-	exit: (code?: number) => {
-		if (isDeno) {
-			Deno.exit(code);
-		}
-
-		// @ts-ignore
-		process.exit(code);
-	},
-};

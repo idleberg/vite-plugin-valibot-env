@@ -1,3 +1,4 @@
+import { cwd } from 'node:process';
 import { execa, type ExecaError } from 'execa';
 import { resolve } from 'node:path';
 import { test } from 'uvu';
@@ -13,7 +14,7 @@ const validEnvironmentVariables = {
 test(`Testing valid environment variables`, async () => {
 	try {
 		await execa('npx', viteArgs, {
-			cwd: resolve(process.cwd(), 'tests/fixtures'),
+			cwd: resolve(cwd(), 'tests/fixtures'),
 			env: validEnvironmentVariables,
 		});
 	} catch (error) {

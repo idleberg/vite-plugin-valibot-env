@@ -2,6 +2,7 @@ import { execa, type ExecaError } from 'execa';
 import { resolve } from 'node:path';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
+import { cwd } from 'node:process';
 
 const viteArgs = ['vite', 'build', '--config', 'vite-valid.config.ts'];
 
@@ -54,7 +55,7 @@ const validEnvironmentVariables = {
 test(`Testing valid environment variables`, async () => {
 	try {
 		await execa('npx', viteArgs, {
-			cwd: resolve(process.cwd(), 'tests/fixtures'),
+			cwd: resolve(cwd(), 'tests/fixtures'),
 			env: validEnvironmentVariables,
 		});
 	} catch (error) {
