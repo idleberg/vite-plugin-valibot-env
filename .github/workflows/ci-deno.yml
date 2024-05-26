@@ -51,10 +51,10 @@ jobs:
     #       ${{ runner.os }}-pnpm-store-
 
     # - name: Install dependencies
-      # run: pnpm install --frozen-lockfile --strict-peer-dependencies
+    #   run: pnpm install --frozen-lockfile --strict-peer-dependencies
 
     - name: Lint Source
       run: deno lint  --rules-exclude=no-explicit-any --ignore=node_modules **/*.ts
 
     - name: Run Tests
-      run: deno run -A --unstable-sloppy-imports npm:uvu tests
+      run: deno run --allow-all --unstable-sloppy-imports npm:uvu tests

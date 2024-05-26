@@ -1,10 +1,16 @@
+import { cwd } from 'node:process';
 import { execa, type ExecaError } from 'execa';
 import { resolve } from 'node:path';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
-import { cwd } from 'node:process';
 
+const isDeno = typeof Deno !== 'undefined' && Deno?.version?.deno;
+const command = isDeno ? 'deno' : 'npx';
 const viteArgs = ['vite', 'build', '--config', 'vite-valid.config.ts'];
+
+if (isDeno) {
+	viteArgs.unshift('run', '--allow-all', 'npm:vite');
+}
 
 const validEnvironmentVariables = {
 	VITE_VALID_BIC: 'BOFAUS3NXXX',
@@ -54,7 +60,7 @@ const validEnvironmentVariables = {
 
 test(`Testing valid environment variables`, async () => {
 	try {
-		await execa('npx', viteArgs, {
+		await execa(command, viteArgs, {
 			cwd: resolve(cwd(), 'tests/fixtures'),
 			env: validEnvironmentVariables,
 		});

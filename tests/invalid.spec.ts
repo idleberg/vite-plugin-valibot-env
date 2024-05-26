@@ -6,7 +6,13 @@ import { v4 as uuidv4 } from '@lukeed/uuid';
 import * as assert from 'uvu/assert';
 import stripAnsi from 'strip-ansi';
 
+const isDeno = typeof Deno !== 'undefined' && Deno?.version?.deno;
 const viteArgs = ['vite', 'build', '--config', 'vite-invalid.config.ts'];
+const command = isDeno ? 'deno' : 'npx';
+
+if (isDeno) {
+	viteArgs.unshift('run', '--allow-all', 'npm:vite');
+}
 
 const invalidEnvironmentVariables = {
 	VITE_INVALID_BIC: 'BIC',
@@ -57,7 +63,7 @@ Object.entries(invalidEnvironmentVariables).forEach(([key, type]) => {
 		const uuid = uuidv4();
 
 		try {
-			await execa('npx', viteArgs, {
+			await execa(command, viteArgs, {
 				cwd: resolve(cwd(), 'tests/fixtures'),
 				env: {
 					[key]: uuid,

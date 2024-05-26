@@ -4,7 +4,13 @@ import { resolve } from 'node:path';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
+const isDeno = typeof Deno !== 'undefined' && Deno?.version?.deno;
+const command = isDeno ? 'deno' : 'npx';
 const viteArgs = ['vite', 'build', '--config', 'vite-no-prefix.config.ts'];
+
+if (isDeno) {
+	viteArgs.unshift('run', '--allow-all', 'npm:vite');
+}
 
 const validEnvironmentVariables = {
 	NODE_ENV: 'development',
@@ -13,7 +19,7 @@ const validEnvironmentVariables = {
 
 test(`Testing valid environment variables`, async () => {
 	try {
-		await execa('npx', viteArgs, {
+		await execa(command, viteArgs, {
 			cwd: resolve(cwd(), 'tests/fixtures'),
 			env: validEnvironmentVariables,
 		});
