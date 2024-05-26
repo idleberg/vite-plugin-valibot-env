@@ -10,6 +10,8 @@ const viteArgs = ['vite', 'build', '--config', 'vite-valid.config.ts'];
 
 if (isDeno) {
 	viteArgs.unshift('run', '--allow-all', 'npm:vite');
+} else {
+	viteArgs.unshift('vite');
 }
 
 const validEnvironmentVariables = {

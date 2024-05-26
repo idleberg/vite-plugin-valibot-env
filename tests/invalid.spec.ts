@@ -7,11 +7,13 @@ import * as assert from 'uvu/assert';
 import stripAnsi from 'strip-ansi';
 
 const isDeno = typeof Deno !== 'undefined' && Deno?.version?.deno;
-const viteArgs = ['vite', 'build', '--config', 'vite-invalid.config.ts'];
+const viteArgs = ['build', '--config', 'vite-invalid.config.ts'];
 const command = isDeno ? 'deno' : 'npx';
 
 if (isDeno) {
 	viteArgs.unshift('run', '--allow-all', 'npm:vite');
+} else {
+	viteArgs.unshift('vite');
 }
 
 const invalidEnvironmentVariables = {
