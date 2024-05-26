@@ -3,18 +3,11 @@ import { execa, type ExecaError } from 'execa';
 import { resolve } from 'node:path';
 import { test } from 'uvu';
 import { v4 as uuidv4 } from '@lukeed/uuid';
+import { viteBuild } from './helper';
 import * as assert from 'uvu/assert';
 import stripAnsi from 'strip-ansi';
 
-const isDeno = typeof Deno !== 'undefined' && Deno?.version?.deno;
-const viteArgs = ['build', '--config', 'vite-invalid.config.ts'];
-const command = isDeno ? 'deno' : 'npx';
-
-if (isDeno) {
-	viteArgs.unshift('run', '--allow-all', 'npm:vite');
-} else {
-	viteArgs.unshift('vite');
-}
+const { command, args } = viteBuild('vite-invalid.config.ts');
 
 const invalidEnvironmentVariables = {
 	VITE_INVALID_BIC: 'BIC',
@@ -65,7 +58,7 @@ Object.entries(invalidEnvironmentVariables).forEach(([key, type]) => {
 		const uuid = uuidv4();
 
 		try {
-			await execa(command, viteArgs, {
+			await execa(command, args, {
 				cwd: resolve(cwd(), 'tests/fixtures'),
 				env: {
 					[key]: uuid,

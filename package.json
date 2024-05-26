@@ -27,7 +27,7 @@
     "prepare": "husky",
     "publish:jsr": "deno publish",
     "publish:npm": "np --no-yarn --any-branch",
-    "test": "uvu tests -r tsm --ignore \"fixtures\""
+    "test": "uvu tests --require tsm --ignore \"fixtures\" --ignore \"helper.ts\""
   },
   "keywords": [
     "vite-plugin",
