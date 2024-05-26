@@ -1,4 +1,4 @@
-name: 'CI: NodeJS'
+name: 'Running tests on NodeJS'
 
 on:
   push:

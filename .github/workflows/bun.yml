@@ -1,4 +1,4 @@
-name: 'CI: Bun'
+name: 'Running tests on Bun'
 
 on:
   push:

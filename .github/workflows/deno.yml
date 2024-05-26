@@ -1,4 +1,4 @@
-name: 'Deno'
+name: 'Running tests on Deno'
 
 on:
   push:
