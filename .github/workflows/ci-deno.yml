@@ -34,24 +34,24 @@ jobs:
       with:
         deno-version: v1.x
 
-    - name: Enable Corepack
-      run: corepack enable
+    # - name: Enable Corepack
+    #   run: corepack enable
 
-    - name: Get pnpm store directory
-      id: pnpm-cache
-      run: |
-        echo "::set-output name=pnpm_store_path::$(pnpm store path)"
+    # - name: Get pnpm store directory
+    #   id: pnpm-cache
+    #   run: |
+    #     echo "::set-output name=pnpm_store_path::$(pnpm store path)"
 
-    - uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
-      name: Setup pnpm cache
-      with:
-        path: ${{ steps.pnpm-cache.outputs.pnpm_store_path }}
-        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-pnpm-store-
+    # - uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+    #   name: Setup pnpm cache
+    #   with:
+    #     path: ${{ steps.pnpm-cache.outputs.pnpm_store_path }}
+    #     key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-pnpm-store-
 
-    - name: Install dependencies
-      run: pnpm install --frozen-lockfile --strict-peer-dependencies
+    # - name: Install dependencies
+      # run: pnpm install --frozen-lockfile --strict-peer-dependencies
 
     - name: Lint Source
       run: deno lint  --rules-exclude=no-explicit-any --ignore=node_modules **/*.ts
