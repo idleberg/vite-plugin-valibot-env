@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-valibot-env",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A Vite plugin to validate environment variables against a Valibot schema",
   "license": "MIT",
   "author": "Jan T. Sott",
@@ -23,8 +23,8 @@
     "build": "tsup",
     "dev": "npm run build -- --watch",
     "lint:code": "eslint **/*.json **/*.ts --ignore-path .gitignore",
-		"lint:deps": "knip --production",
-		"lint": "npm-run-all --parallel lint:*",
+    "lint:deps": "knip --production",
+    "lint": "npm-run-all --parallel lint:*",
     "prepack": "npm run build",
     "prepare": "husky",
     "publish:jsr": "deno publish",
