@@ -7,7 +7,7 @@ import logSymbols from 'log-symbols';
 
 type PluginOptions = {
 	ignoreEnvPrefix?: boolean;
-	transform?: boolean;
+	transformValues?: boolean;
 };
 
 /**
@@ -38,7 +38,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 	schema: T,
 	options: PluginOptions = {
 		ignoreEnvPrefix: false,
-		transform: false,
+		transformValues: false,
 	},
 ): Plugin {
 	return {
@@ -47,7 +47,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 			const rootDir = userConfig.root || cwd();
 			const envDir = userConfig.envDir ? normalizePath(resolve(rootDir, userConfig.envDir)) : rootDir;
 			const rawEnv = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
-			const env = options.transform === true ? transformEnvironment(rawEnv) : rawEnv;
+			const env = options.transformValues === true ? transformEnvironment(rawEnv) : rawEnv;
 
 			const { issues, success } = safeParse(schema, env);
 
