@@ -22,7 +22,9 @@
   "scripts": {
     "build": "tsup",
     "dev": "npm run build -- --watch",
-    "lint": "eslint **/*.json **/*.ts --ignore-path .gitignore",
+    "lint:code": "eslint **/*.json **/*.ts --ignore-path .gitignore",
+		"lint:deps": "knip --production",
+		"lint": "npm-run-all --parallel lint:*",
     "prepack": "npm run build",
     "prepare": "husky",
     "publish:jsr": "deno publish",
@@ -35,20 +37,22 @@
   ],
   "dependencies": {
     "kleur": "^4.1.5",
-    "log-symbols": "^4.1.0"
+    "log-symbols": "^6.0.0"
   },
   "devDependencies": {
     "@lukeed/uuid": "^2.0.1",
-    "@types/node": "^14.18.0",
-    "@typescript-eslint/eslint-plugin": "^7.10.0",
-    "@typescript-eslint/parser": "^7.10.0",
+    "@types/node": "^18.19.33",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
     "eslint": "^8.50.0",
     "eslint-plugin-jsonc": "^2.16.0",
     "eslint-plugin-unicorn": "^53.0.0",
     "execa": "^8.0.1",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.4",
+    "knip": "^5.17.3",
+    "lint-staged": "^15.2.5",
     "np": "^10.0.5",
+    "npm-run-all2": "^6.2.0",
     "prettier": "^3.2.5",
     "strip-ansi": "^7.1.0",
     "tsm": "^2.3.0",
@@ -56,7 +60,7 @@
     "typescript": "^5.4.5",
     "uvu": "^0.5.6",
     "valibot": "^0.30.0",
-    "vite": "^5.2.11"
+    "vite": "^5.2.12"
   },
   "peerDependencies": {
     "valibot": "^0.30.0",
