@@ -6,14 +6,15 @@ import { safeParse, type ObjectSchema, type SchemaIssue } from 'valibot';
 import logSymbols from 'log-symbols';
 
 type PluginOptions = {
-	ignoreEnvPrefix: boolean;
+	ignoreEnvPrefix?: boolean;
+	transform?: boolean;
 };
 
 /**
  * Exports a Vite plugin that validates environment variables against a schema.
- * @param {ObjectSchema} schema
- * @param {PluginOptions} options
- * @returns {Plugin}
+ * @param schema
+ * @param options
+ * @returns
  *
  * @example
  * ```ts
@@ -37,6 +38,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 	schema: T,
 	options: PluginOptions = {
 		ignoreEnvPrefix: false,
+		transform: false,
 	},
 ): Plugin {
 	return {
@@ -44,7 +46,9 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 		config(userConfig, { mode }) {
 			const rootDir = userConfig.root || cwd();
 			const envDir = userConfig.envDir ? normalizePath(resolve(rootDir, userConfig.envDir)) : rootDir;
-			const env = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
+			const rawEnv = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
+			const env = options.transform === true ? transformEnvironment(rawEnv) : rawEnv;
+
 			const { issues, success } = safeParse(schema, env);
 
 			if (success) {
@@ -66,7 +70,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 
 /**
  * Logger for printing well-formed schema issues.
- * @param {SchemaIssue} issue
+ * @param issue
  * @returns
  */
 function logIssue(issue: SchemaIssue) {
@@ -77,4 +81,40 @@ function logIssue(issue: SchemaIssue) {
 	const label = bgRed(` ${issue.path[0].key} `);
 
 	console.error(logSymbols.error, label, issue.message);
+}
+
+/**
+ * Transforms values of an environment variables object to their respective types.
+ * @param env
+ * @returns
+ */
+function transformEnvironment(env: Record<string, string>): Record<string, unknown> {
+	return Object.fromEntries(
+		Object.entries(env).map(([key, value]) => {
+			return [key, transformString(value)];
+		}),
+	);
+}
+
+/**
+ * Transforms a string to its respective primitive type.
+ * @param value
+ * @returns
+ */
+function transformString(value: string): unknown {
+	switch (true) {
+		case value === 'null':
+		case value === 'true':
+		case value === 'false':
+			return JSON.parse(value);
+
+		case /^-?\d+$/.test(value):
+			return parseInt(value, 10);
+
+		case /^-?\d+\.\d+$/.test(value):
+			return parseFloat(value);
+
+		default:
+			return value;
+	}
 }
