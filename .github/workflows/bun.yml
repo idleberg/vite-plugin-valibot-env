@@ -24,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      matrix:
+        vite-version: ['vite@2', 'vite@3', 'vite@4', 'vite@5']
 
     steps:
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -32,7 +34,9 @@ jobs:
 
     - uses: oven-sh/setup-bun@8f24390df009a496891208e5e36b8a1de1f45135 # v1.2.1
     - name: Install dependencies
-      run: bun install --frozen-lockfile --strict-peer-dependencies
+      run: |
+        bun install --frozen-lockfile --strict-peer-dependencies
+        bun i ${{ matrix.vite-version }}
 
     - name: Lint Source
       run: bun run --if-present lint
