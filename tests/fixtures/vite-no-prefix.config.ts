@@ -3,7 +3,7 @@ import * as v from 'valibot';
 import valibotPlugin from '../../index';
 
 const envSchema = v.object({
-	NODE_ENV: v.literal('development'),
+	NODE_ENV: v.union([v.literal('development'), v.literal('production')]),
 	VITE_STRING: v.string(),
 });
 
