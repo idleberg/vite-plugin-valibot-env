@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Development",
+			"type": "npm",
+			"script": "dev",
+			"presentation": {
+				"clear": true,
+				"focus": false,
+				"group": "developmentGroup",
+				"panel": "shared"
+			},
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		},
+		{
+			"label": "Open Shell",
+			"type": "shell",
+			"command": "eval",
+			"args": [
+				"$SHELL"
+			],
+			"presentation": {
+				"clear": true,
+				"focus": true,
+				"group": "developmentGroup",
+				"panel": "shared"
+			},
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		}
+	]
+}
