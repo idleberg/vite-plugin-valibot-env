@@ -8,6 +8,10 @@
     "type": "git",
     "url": "https://github.com/idleberg/vite-plugin-valibot-env"
   },
+	"keywords": [
+		"vite-plugin",
+		"valibot"
+	],
   "type": "module",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -31,10 +35,6 @@
     "publish:npm": "np --no-yarn --any-branch",
     "test": "uvu tests --require tsm --ignore \"fixtures\" --ignore \"helper.ts\""
   },
-  "keywords": [
-    "vite-plugin",
-    "valibot"
-  ],
   "dependencies": {
     "kleur": "^4.1.5",
     "log-symbols": "^6.0.0"
