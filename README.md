@@ -8,11 +8,15 @@
 [![CI: Node](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/node.yml?logo=nodedotjs&logoColor=white&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions)
 [![CI: Deno](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/deno.yml?logo=deno&logoColor=white&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions)
 
-## Installation
+## Why? :thinking:
+
+It's generally a good idea to check that you're all set up early in the development process. Validating that your environment variables have been defined and are of the expected type is a part of that – for yourself and your colleagues. While there are _many_ libraries to validate against a schema, [Valibot](https://valibot.dev/) stands out for its versatility and modularity. The small footprint makes it an ideal candidate for validation in the frontend. So why not use it in your development process, too?
+
+## Installation :cd:
 
 `npm install -D vite-plugin-valibot-env valibot`
 
-## Usage
+## Usage :rocket:
 
 Let's start with a very basic example
 
@@ -33,7 +37,7 @@ export default defineConfig({
 });
 ```
 
-### API
+### API :book:
 
 `valibot(schema, options?)`
 
@@ -56,6 +60,6 @@ Default: `false`
 
 Setting this to `true` will try and transform string values to their respective types. Supports booleans, integers, floats, and `null`.
 
-## License
+## License :judge:
 
 This work is licensed under [The MIT License](LICENSE).
