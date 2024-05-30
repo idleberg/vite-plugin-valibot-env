@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "dev": "npm run build -- --watch",
+    "dev": "tsup --watch",
     "lint:code": "eslint **/*.json **/*.ts --no-warn-ignored",
     "lint:deps": "knip --production",
     "lint": "npm-run-all --parallel lint:*",
