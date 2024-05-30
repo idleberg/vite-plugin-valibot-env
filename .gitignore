@@ -4,3 +4,4 @@ dist/
 
 # Development
 /vite.config.*
+vite*.config.ts.timestamp-*.mjs
