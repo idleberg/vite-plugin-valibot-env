@@ -1,10 +1,11 @@
-const { command, args } = viteBuild('vite-valid.config.ts');
 import { cwd } from 'node:process';
 import { execa, type ExecaError } from 'execa';
 import { resolve } from 'node:path';
 import { test } from 'uvu';
 import { viteBuild } from './helper';
 import * as assert from 'uvu/assert';
+
+const { command, args } = viteBuild('vite-valid.config.ts');
 
 const validEnvironmentVariables = {
 	VITE_VALID_BIC: 'BOFAUS3NXXX',
