@@ -60,6 +60,10 @@ Default: `false`
 
 Setting this to `true` will try and transform string values to their respective types. Supports booleans, integers, floats, and `null`.
 
+## Related
+
+- [esbuild-plugin-valibot-env](hhttps://github.com/idleberg/esbuild-plugin-valibot-env)
+
 ## License
 
 This work is licensed under [The MIT License](LICENSE).
