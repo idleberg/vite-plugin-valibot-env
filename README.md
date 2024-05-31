@@ -62,7 +62,7 @@ Setting this to `true` will try and transform string values to their respective 
 
 ## Related
 
-- [esbuild-plugin-valibot-env](hhttps://github.com/idleberg/esbuild-plugin-valibot-env)
+- [esbuild-plugin-valibot-env](https://github.com/idleberg/esbuild-plugin-valibot-env)
 
 ## License
 
