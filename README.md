@@ -10,7 +10,7 @@
 
 ## Why?
 
-It's generally a good idea to check that you're all set up early in the development process. Validating that your environment variables have been defined and are of the expected type is a part of that – for yourself and your colleagues. While there are _many_ libraries to validate against a schema, [Valibot](https://valibot.dev/) stands out for its versatility and modularity. The small footprint makes it an ideal candidate for validation in the frontend. So why not use it in your development process, too?
+It's generally a good idea to check that you're all set up early in the development process. Validating that your environment variables have been defined and are of the expected type is a part of that – for yourself and your colleagues. While there are _many_ libraries to validate against a schema, [Valibot](https://valibot.dev/) stands out for its versatility and modularity. The small footprint makes it an ideal candidate for validation in the frontend. So why not use it in your development process as well?
 
 ## Installation
 
