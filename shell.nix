@@ -8,4 +8,9 @@ pkgs.mkShell {
 		nodejs_20
 		openssh
 	];
+
+	shellHook = ''
+		corepack enable
+		corepack up
+  '';
 }
