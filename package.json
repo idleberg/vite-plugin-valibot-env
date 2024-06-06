@@ -58,7 +58,7 @@
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.11.0",
     "uvu": "^0.5.6",
-    "valibot": "^0.30.0",
+    "valibot": "^0.31.0",
     "vite": "^5.2.12"
   },
   "peerDependencies": {
@@ -71,5 +71,5 @@
       "prettier --cache --write"
     ]
   },
-  "packageManager": "pnpm@9.1.2+sha512.127dc83b9ea10c32be65d22a8efb4a65fb952e8fefbdfded39bdc3c97efc32d31b48b00420df2c1187ace28c921c902f0cb5a134a4d032b8b5295cbfa2c681e2"
+  "packageManager": "pnpm@9.2.0+sha256.94fab213df221c55b6956b14a2264c21c6203cca9f0b3b95ff2fe9b84b120390"
 }
