@@ -10,7 +10,6 @@ pkgs.mkShell {
 	];
 
 	shellHook = ''
-		corepack enable
 		corepack up
   '';
 }
