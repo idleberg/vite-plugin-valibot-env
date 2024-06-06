@@ -24,7 +24,7 @@ type PluginOptions = {
  *
  * const envSchema = v.object({
  * 	VITE_API_ENDPOINT: v.pipe([v.string(), v.url()]),
- * 	VITE_ENABLE_LOGGING: v.boolean(),
+ * 	VITE_LOCALE: v.literal('en_US'),
  * });
  *
  * export default defineConfig({
