@@ -6,7 +6,7 @@ const envSchema = v.object({
 	VITE_TRUE: v.boolean(),
 	VITE_FALSE: v.boolean(),
 	VITE_NULL: v.null_(),
-	VITE_INT: v.number([v.integer()]),
+	VITE_INT: v.pipe(v.number(), v.integer()),
 	VITE_FLOAT: v.number(),
 });
 

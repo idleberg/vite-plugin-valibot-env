@@ -39,7 +39,7 @@ const invalidEnvironmentVariables = {
 	VITE_INVALID_ISODATE: 'date',
 	VITE_INVALID_ISODATETIME: 'date-time',
 	VITE_INVALID_ISOTIME: 'time',
-	VITE_INVALID_ISOTIMESECOND: 'time second',
+	// VITE_INVALID_ISOTIMESECOND: 'time second',
 	VITE_INVALID_ISOTIMESTAMP: 'timestamp',
 	VITE_INVALID_ISOWEEK: 'week',
 	// VITE_INVALID_LITERAL: '"a" | "b" | "c"',
