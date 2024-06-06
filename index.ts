@@ -2,7 +2,7 @@ import { cwd, exit } from 'node:process';
 import { bgRed } from 'kleur/colors';
 import { loadEnv, normalizePath, type Plugin } from 'vite';
 import { resolve } from 'node:path';
-import { safeParse, type ObjectSchema, type SchemaIssue } from 'valibot';
+import { safeParse, type InferIssue, type ObjectSchema } from 'valibot';
 import logSymbols from 'log-symbols';
 
 type PluginOptions = {
@@ -23,7 +23,7 @@ type PluginOptions = {
  * import valibot from 'vite-plugin-valibot-env';
  *
  * const envSchema = v.object({
- * 	VITE_API_ENDPOINT: v.string([v.url()]),
+ * 	VITE_API_ENDPOINT: v.pipe([v.string(), v.url()]),
  * 	VITE_ENABLE_LOGGING: v.boolean(),
  * });
  *
@@ -73,7 +73,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
  * @param issue
  * @returns
  */
-function logIssue(issue: SchemaIssue) {
+function logIssue(issue: InferIssue<any>) {
 	if (!issue.path) {
 		return;
 	}
