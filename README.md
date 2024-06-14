@@ -26,7 +26,7 @@ import * as v from 'valibot';
 import valibot from 'vite-plugin-valibot-env';
 
 const envSchema = v.object({
-	VITE_API_ENDPOINT: v.pipe([v.string(), v.url()]),
+	VITE_API_ENDPOINT: v.pipe(v.string(), v.url()),
 	VITE_LOCALE: v.literal('en_US'),
 });
 
