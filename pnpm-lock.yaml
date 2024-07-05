@@ -68,8 +68,8 @@ devDependencies:
     specifier: ^0.5.6
     version: 0.5.6
   valibot:
-    specifier: ^0.35.0
-    version: 0.35.0
+    specifier: ^0.36.0
+    version: 0.36.0
   vite:
     specifier: ^5.2.12
     version: 5.3.1(@types/node@18.19.39)
@@ -4662,8 +4662,8 @@ packages:
       sade: 1.8.1
     dev: true
 
-  /valibot@0.35.0:
-    resolution: {integrity: sha512-+i2aCRkReTrd5KBN/dW2BrPOvFnU5LXTV2xjZnjnqUIO8YUx6P2+MgRrkwF2FhkexgyKq/NIZdPdknhHf5A/Ww==}
+  /valibot@0.36.0:
+    resolution: {integrity: sha512-CjF1XN4sUce8sBK9TixrDqFM7RwNkuXdJu174/AwmQUB62QbCQADg5lLe8ldBalFgtj1uKj+pKwDJiNo4Mn+eQ==}
     dev: true
 
   /validate-npm-package-license@3.0.4:
