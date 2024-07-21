@@ -2,7 +2,7 @@ import { cwd } from 'node:process';
 import { execa, type ExecaError } from 'execa';
 import { resolve } from 'node:path';
 import { test } from 'uvu';
-import { viteBuild } from './helper';
+import { viteBuild } from './helper.ts';
 import * as assert from 'uvu/assert';
 
 const { command, args } = viteBuild('vite-valid.config.ts');
