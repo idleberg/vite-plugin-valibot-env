@@ -23,4 +23,11 @@ jobs:
       with:
         deno-version: v1.x
 
-    - run: deno publish --dry-run && deno publish
+    - run: |
+        deno lint \
+          --ignore=node_modules src tests \
+          --rules-exclude=no-explicit-any \
+          ./*.ts tests/**/*.ts
+
+        deno publish --dry-run
+        deno publish
