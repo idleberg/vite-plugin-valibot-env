@@ -62,7 +62,7 @@
     "vite": "^5.3.4"
   },
   "peerDependencies": {
-    "valibot": ">=0.30.0 <0.38.0",
+    "valibot": ">=0.30 <0.38",
     "vite": ">=2 <6"
   },
   "lint-staged": {
