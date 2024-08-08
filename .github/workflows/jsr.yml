@@ -1,0 +1,26 @@
+name: Publish on JSR
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'jsr.json'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      with:
+        fetch-depth: 0
+
+    - uses: denoland/setup-deno@041b854f97b325bd60e53e9dc2de9cb9f9ac0cba # v1.1.4
+      with:
+        deno-version: v1.x
+
+    - run: deno publish --dry-run && deno publish
