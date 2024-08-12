@@ -45,7 +45,7 @@
     "eslint": "^9.9.0",
     "eslint-plugin-jsonc": "^2.16.0",
     "eslint-plugin-unicorn": "^55.0.0",
-    "execa": "^9.3.0",
+    "execa": "^8.0.1",
     "husky": "^9.1.4",
     "knip": "^5.27.2",
     "lint-staged": "^15.2.8",
