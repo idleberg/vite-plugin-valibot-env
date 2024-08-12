@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'jsr.json'
 
 jobs:
   publish:
