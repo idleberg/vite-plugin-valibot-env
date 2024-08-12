@@ -1,5 +1,5 @@
 {
 	"tasks": {
-		"lint": "deno lint --rules-exclude=no-explicit-any --ignore=node_modules . /*.ts tests/**/*.ts",
+		"lint": "deno lint --rules-exclude=no-explicit-any --ignore=node_modules . /*.ts tests/**/*.ts"
 	}
 }
