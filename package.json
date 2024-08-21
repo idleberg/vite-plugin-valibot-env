@@ -40,7 +40,6 @@
     "log-symbols": "^6.0.0"
   },
   "devDependencies": {
-    "@lukeed/uuid": "^2.0.1",
     "@types/node": "^18.19.41",
     "eslint": "^9.9.0",
     "eslint-plugin-jsonc": "^2.16.0",

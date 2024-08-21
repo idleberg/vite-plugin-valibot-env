@@ -1,8 +1,8 @@
 import { cwd } from 'node:process';
 import { execa, type ExecaError } from 'execa';
+import { randomUUID } from 'node:crypto';
 import { resolve } from 'node:path';
 import { test } from 'uvu';
-import { v4 as uuidv4 } from '@lukeed/uuid';
 import { viteBuild } from './helper.ts';
 import * as assert from 'uvu/assert';
 import stripAnsi from 'strip-ansi';
@@ -55,7 +55,7 @@ const invalidEnvironmentVariables = {
 
 Object.entries(invalidEnvironmentVariables).forEach(([key, type]) => {
 	test(`Testing invalid environment variable ${key}`, async () => {
-		const uuid = uuidv4();
+		const uuid = randomUUID();
 
 		try {
 			await execa(command, args, {
