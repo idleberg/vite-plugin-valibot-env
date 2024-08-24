@@ -14,7 +14,6 @@ on:
     paths:
     - '.github/workflows/deno.yml'
     - 'index.ts'
-    - 'jsr.json'
     - 'package.json'
     - 'pnpm-lock.yaml'
     - 'tests/**'
