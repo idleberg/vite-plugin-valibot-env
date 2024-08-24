@@ -1,7 +1,4 @@
 {
-	"name": "@idleberg/vite-plugin-valibot-env",
-	"license": "MIT",
-	"exports": "./index.ts",
   "tasks": {
     "lint": "deno lint --rules-exclude=no-explicit-any --ignore=node_modules ./*.ts tests/**/*.ts",
 		"publish": "deno publish --dry-run && deno publish",
