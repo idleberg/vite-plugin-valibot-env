@@ -65,7 +65,7 @@ Object.entries(invalidEnvironmentVariables).forEach(([key, type]) => {
 				},
 			});
 		} catch (error) {
-			const stderr = stripAnsi((error as ExecaError).stderr);
+			const stderr = stripAnsi((error as ExecaError).message);
 
 			assert.match(stderr, `Invalid ${type}: Received "${uuid}"`);
 		}
