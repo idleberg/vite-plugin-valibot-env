@@ -26,13 +26,17 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch --onSuccess \"tsup --dts-only \"",
-    "lint:code": "eslint **/*.json **/*.ts --no-warn-ignored",
+    "lint:deno": "deno lint --rules-exclude=no-explicit-any --ignore=node_modules ./*.ts tests/**/*.ts",
+    "lint:node": "eslint **/*.json **/*.ts --no-warn-ignored",
     "lint:deps": "knip --production",
     "lint": "npm-run-all --parallel lint:*",
     "prepack": "npm run build",
     "prepare": "husky",
-    "publish": "np --no-yarn --any-branch",
-    "test": "uvu tests --require tsm --ignore \"fixtures\" --ignore \"helper.ts\""
+    "publish:jsr": "deno publish",
+    "publish:npm": "np --no-yarn --any-branch",
+    "test:deno": "deno run --allow-all --unstable-sloppy-imports npm:uvu tests",
+    "test:node": "uvu tests --require tsm --ignore \"fixtures\" --ignore \"helper.ts\"",
+    "test": "npm-run-all --parallel test:*"
   },
   "dependencies": {
     "kleur": "^4.1.5",

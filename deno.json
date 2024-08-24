@@ -1,7 +1,0 @@
-{
-  "tasks": {
-    "lint": "deno lint --rules-exclude=no-explicit-any --ignore=node_modules ./*.ts tests/**/*.ts",
-		"publish": "deno publish --dry-run && deno publish",
-    "test": "deno run --allow-all --unstable-sloppy-imports npm:uvu tests"
-  }
-}

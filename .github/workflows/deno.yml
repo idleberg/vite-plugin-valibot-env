@@ -40,7 +40,7 @@ jobs:
       run: deno install npm:${{ matrix.vite-version }}
 
     - name: Lint Source
-      run: deno task lint
+      run: deno lint --rules-exclude=no-explicit-any --ignore=node_modules **/*.ts
 
     - name: Run Tests
-      run: deno task test
+      run: deno run --allow-all --unstable-sloppy-imports npm:uvu tests
