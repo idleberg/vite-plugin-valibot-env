@@ -2,8 +2,6 @@ name: Publish on JSR
 
 on:
   push:
-    paths:
-    - 'jsr.json'
     branches:
       - main
 
