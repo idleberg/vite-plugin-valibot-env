@@ -5,7 +5,7 @@ export default defineConfig((options) => {
 		target: 'node18',
 		clean: true,
 		dts: true,
-		entry: ['index.ts'],
+		entry: ['src/index.ts'],
 		format: 'esm',
 		minify: !options.watch,
 		treeshake: 'recommended',

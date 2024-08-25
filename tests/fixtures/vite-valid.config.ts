@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import * as v from 'valibot';
-import valibotPlugin from '../../index.ts';
+import valibotPlugin from '../../src/index.ts';
 
 const envSchema = v.object({
 	VITE_VALID_BIC: v.pipe(v.string(), v.bic()),
