@@ -42,7 +42,7 @@ jobs:
         path: |
           ~/.deno
           ~/.cache/deno
-        key: ${{ runner.os }}-deno-${{ hashFiles('**/jsr.json') }}
+        key: ${{ runner.os }}-deno-${{ hashFiles('**/pnpm-lock.yaml') }}
 
     - name: Install Vite
       run: deno install npm:${{ matrix.vite-version }}
