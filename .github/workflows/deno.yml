@@ -36,6 +36,14 @@ jobs:
       with:
         deno-version: v1.x
 
+    - uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+      name: Setup Deno cache
+      with:
+        path: |
+          ~/.deno
+          ~/.cache/deno
+        key: ${{ runner.os }}-deno-${{ hashFiles('**/jsr.json') }}
+
     - name: Install Vite
       run: deno install npm:${{ matrix.vite-version }}
 
