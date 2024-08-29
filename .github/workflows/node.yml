@@ -46,7 +46,7 @@ jobs:
         echo "::set-output name=pnpm_store_path::$(pnpm store path)"
 
     - uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
-      name: Setup pnpm cache
+      name: Set up pnpm cache
       with:
         path: ${{ steps.pnpm-cache.outputs.pnpm_store_path }}
         key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
