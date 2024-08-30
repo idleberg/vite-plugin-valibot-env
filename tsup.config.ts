@@ -1,13 +1,15 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig((options) => {
+	const isProduction = options.watch !== true;
+
 	return {
 		target: 'node18',
-		clean: true,
-		dts: true,
+		clean: isProduction,
+		dts: isProduction,
 		entry: ['src/index.ts'],
 		format: 'esm',
-		minify: !options.watch,
+		minify: isProduction,
 		treeshake: 'recommended',
 	};
 });
