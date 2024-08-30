@@ -7,6 +7,8 @@ import logSymbols from 'log-symbols';
 
 type PluginOptions = {
 	ignoreEnvPrefix?: boolean;
+	printAfterIssues?: string;
+	printBeforeIssues?: string;
 	transformValues?: boolean;
 };
 
@@ -55,12 +57,20 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 				return userConfig;
 			}
 
+			if (typeof options.printBeforeIssues === 'string' && options.printBeforeIssues.trim().length) {
+				console.log(`\n${options.printBeforeIssues.trim()}\n`);
+			}
+
 			for (const issue of issues) {
 				if (typeof issue === 'undefined') {
 					continue;
 				}
 
 				logIssue(issue);
+			}
+
+			if (typeof options.printAfterIssues === 'string' && options.printAfterIssues.trim().length) {
+				console.log(`\n${options.printAfterIssues.trim()}\n`);
 			}
 
 			exit(1);
