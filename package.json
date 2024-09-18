@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.19.50",
+    "dotenv": "^16.4.5",
     "eslint": "^9.10.0",
     "eslint-plugin-jsonc": "^2.16.0",
     "eslint-plugin-unicorn": "^55.0.0",

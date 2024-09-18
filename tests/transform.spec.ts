@@ -1,29 +1,28 @@
+import { build } from 'vite';
 import { cwd } from 'node:process';
-import { execa, type ExecaError } from 'execa';
 import { resolve } from 'node:path';
+import { schema } from './fixtures/schema.transform.ts';
 import { test } from 'uvu';
-import { viteBuild } from './helper.ts';
 import * as assert from 'uvu/assert';
+import dotenv from 'dotenv';
+import valibotPlugin from '../src/index.ts';
 
-const { command, args } = viteBuild('vite-transform.config.ts');
+const fixtures = resolve(cwd(), 'tests/fixtures');
 
-const validEnvironmentVariables = {
-	VITE_TRUE: 'true',
-	VITE_FALSE: 'false',
-	VITE_NULL: 'null',
-	VITE_INT: '1',
-	VITE_FLOAT: '1.1',
-};
+dotenv.config({
+	path: resolve(fixtures, '.env.transform'),
+});
 
 test(`Testing valid environment variables`, async () => {
-	try {
-		await execa(command, args, {
-			cwd: resolve(cwd(), 'tests/fixtures'),
-			env: validEnvironmentVariables,
-		});
-	} catch (error) {
-		throw new Error((error as ExecaError).message);
-	}
+	await build({
+		envPrefix: 'PLUGIN_TEST__',
+		plugins: [
+			valibotPlugin(schema, {
+				transformValues: true,
+			}),
+		],
+		root: fixtures,
+	});
 
 	assert.ok(true);
 });
