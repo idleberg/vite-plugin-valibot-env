@@ -17,4 +17,5 @@ block_comment = *
 block_comment_end = */
 
 [*.{markdown,md}]
+indent_style = space
 trim_trailing_whitespace = false
