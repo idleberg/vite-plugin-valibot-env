@@ -19,8 +19,8 @@ type PluginOptions = {
 	transformValues?: boolean;
 
 	/**
-	 * Throws an error rather than exiting if any issues are found in the schema. This is useful for CI/CD
-	 * pipelines.
+	 * Throws an error rather than exiting if any issues are found in the schema. This is used for testing
+	 * mostly.
 	 */
 	throwError?: boolean;
 };
