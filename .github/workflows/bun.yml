@@ -4,17 +4,17 @@ on:
   push:
     paths:
     - '.github/workflows/bun.yml'
+    - 'src/**'
     - 'tests/**'
     - 'types/**'
-    - 'index.ts'
     - 'package.json'
     - 'pnpm-lock.yaml'
   pull_request:
     paths:
     - '.github/workflows/bun.yml'
+    - 'src/**'
     - 'tests/**'
     - 'types/**'
-    - 'index.ts'
     - 'package.json'
     - 'pnpm-lock.yaml'
   workflow_dispatch:

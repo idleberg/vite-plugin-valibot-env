@@ -4,19 +4,19 @@ on:
   push:
     paths:
     - '.github/workflows/node.yml'
-    - 'index.ts'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+    - 'src/**'
     - 'tests/**'
     - 'types/**'
+    - 'package.json'
+    - 'pnpm-lock.yaml'
   pull_request:
     paths:
     - '.github/workflows/node.yml'
-    - 'index.ts'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+    - 'src/**'
     - 'tests/**'
     - 'types/**'
+    - 'package.json'
+    - 'pnpm-lock.yaml'
   workflow_dispatch:
 
 jobs:
