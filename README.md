@@ -25,6 +25,9 @@ import { defineConfig } from 'vite';
 import * as v from 'valibot';
 import valibot from 'vite-plugin-valibot-env';
 
+// When using .env files
+import 'dotenv/config';
+
 const envSchema = v.object({
 	VITE_API_ENDPOINT: v.pipe(v.string(), v.url()),
 	VITE_LOCALE: v.literal('en_US'),

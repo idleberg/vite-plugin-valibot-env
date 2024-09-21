@@ -6,8 +6,23 @@ import { safeParse, type InferIssue, type ObjectSchema } from 'valibot';
 import logSymbols from 'log-symbols';
 
 type PluginOptions = {
+	/**
+	 * Setting this to `true` will include unprefixed environment variables in the validation. This is useful
+	 * validate unprefixed environment variables as well, e.g. `HOST` and `PORT` to configure the Vite server.
+	 */
 	ignoreEnvPrefix?: boolean;
+
+	/**
+	 * While all environment variable values are actually of type `string`, this setting allows transforming
+	 * booleans, integers, floats, and null to their respective type.
+	 */
 	transformValues?: boolean;
+
+	/**
+	 * Throws an error rather than exiting if any issues are found in the schema. This is useful for CI/CD
+	 * pipelines.
+	 */
+	throwError?: boolean;
 };
 
 /**
@@ -39,6 +54,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 	options: PluginOptions = {
 		ignoreEnvPrefix: false,
 		transformValues: false,
+		throwError: false,
 	},
 ): Plugin {
 	return {
@@ -61,6 +77,10 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 				}
 
 				logIssue(issue);
+			}
+
+			if (options.throwError) {
+				throw new TypeError('Invalid Valibot schema issues found.');
 			}
 
 			exit(1);
