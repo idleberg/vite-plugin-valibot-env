@@ -32,7 +32,7 @@ jobs:
       with:
         fetch-depth: 10
 
-    - uses: denoland/setup-deno@041b854f97b325bd60e53e9dc2de9cb9f9ac0cba # v1.1.4
+    - uses: denoland/setup-deno@5e01c016a857a4dbb5afe9d0f9733cd472cba985 # v1.5.1
       with:
         deno-version: v1.x
 
@@ -45,7 +45,7 @@ jobs:
         key: ${{ runner.os }}-deno-${{ hashFiles('**/pnpm-lock.yaml') }}
 
     - name: Install Vite
-      run: deno install npm:${{ matrix.vite-version }}
+      run: deno cache npm:${{ matrix.vite-version }} --allow-scripts
 
     - name: Lint Source
       run: deno lint --rules-exclude=no-explicit-any --ignore=node_modules **/*.ts
