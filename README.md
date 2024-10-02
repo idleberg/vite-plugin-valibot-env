@@ -82,8 +82,8 @@ A text printed after the output of all issues.
 
 #### `options.throwError`
 
-Type: `string`  
-Default: `undefined`  
+Type: `boolean`  
+Default: `false`  
 
 > [!CAUTION]
 > This option exists for testing purposes and is not recommended for use.
