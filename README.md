@@ -25,7 +25,7 @@ import { defineConfig } from 'vite';
 import * as v from 'valibot';
 import valibot from 'vite-plugin-valibot-env';
 
-// When using .env files
+// Optional: evaluate .env file
 import 'dotenv/config';
 
 const envSchema = v.object({
