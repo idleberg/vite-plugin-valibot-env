@@ -90,15 +90,15 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 					continue;
 				}
 
+				if (options?.throwError) {
+					throw new TypeError((issue as InferIssue<any>).message);
+				}
+
 				logIssue(issue);
 			}
 
 			if (typeof options?.printAfter === 'string') {
 				console.log(options.printAfter);
-			}
-
-			if (options?.throwError) {
-				throw new TypeError('Invalid Valibot schema issues found.');
 			}
 
 			exit(1);
