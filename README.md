@@ -78,7 +78,7 @@ Default: `undefined`
 A text printed after the output of all issues.
 
 > [!TIP]
-> You could use this to point to the documentation of your project's environment variables.
+> You could use this to point collaborators to the documentation of your project's environment variables.
 
 ## Related
 
