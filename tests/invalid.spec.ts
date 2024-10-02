@@ -1,11 +1,11 @@
 import { build } from 'vite';
-import { cwd } from 'node:process';
+import { cwd, env } from 'node:process';
 import { resolve } from 'node:path';
 import { test } from 'uvu';
-import * as assert from 'uvu/assert';
-import valibotPlugin from '../src/index.ts';
-import * as v from 'valibot';
 const fixtures = resolve(cwd(), 'tests/fixtures');
+import * as assert from 'uvu/assert';
+import * as v from 'valibot';
+import valibotPlugin from '../src/index.ts';
 
 const invalidEnvironmentVariables = {
 	PLUGIN_TEST__INVALID_BIC: 'BIC',
@@ -57,7 +57,7 @@ Object.entries(invalidEnvironmentVariables).forEach(([key, type]) => {
 			[key]: v.undefined_(),
 		});
 
-		process.env[key] = type;
+		env[key] = type;
 
 		try {
 			await build({
