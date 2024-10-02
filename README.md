@@ -85,8 +85,8 @@ A text printed after the output of all issues.
 Type: `string`  
 Default: `undefined`  
 
-> [!WARNING]
-> This option exists for testing purposes and is not recommended to be used.
+> [!CAUTION]
+> This option exists for testing purposes and is not recommended for use.
 
 Throws an error rather than exiting gracefully when issues have been found in the schema.
 
