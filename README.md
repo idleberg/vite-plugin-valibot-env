@@ -80,6 +80,16 @@ A text printed after the output of all issues.
 > [!TIP]
 > You could use this to point collaborators to the documentation of your project's environment variables.
 
+#### `options.throwError`
+
+Type: `string`  
+Default: `undefined`  
+
+> [!WARNING]
+> This option exists for testing purposes and is not recommended to be used.
+
+Throws an error rather than exiting gracefully when issues have been found in the schema.
+
 ## Related
 
 - [esbuild-plugin-valibot-env](https://github.com/idleberg/esbuild-plugin-valibot-env)

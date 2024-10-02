@@ -29,7 +29,7 @@ type PluginOptions = {
 	printAfter?: string;
 
 	/**
-	 * Throws an error rather than exiting if any issues are found in the schema. This is used for testing
+	 * Throws an error rather than exiting gracefully when issues have been found in the schema. This is used for testing
 	 * mostly.
 	 */
 	throwError?: boolean;
