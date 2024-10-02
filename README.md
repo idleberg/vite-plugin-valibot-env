@@ -75,7 +75,10 @@ A short text printed before the output of any issues.
 Type: `string`  
 Default: `undefined`  
 
-A text printed after the output of all issues, e.g. a link to the documentation of your project environment variables.
+A text printed after the output of all issues.
+
+> [!TIP]
+> You could use this to point to the documentation of your project's environment variables.
 
 ## Related
 

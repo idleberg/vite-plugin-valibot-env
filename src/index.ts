@@ -24,7 +24,7 @@ type PluginOptions = {
 	printBefore?: string;
 
 	/**
-	 * A text printed after the output of all issues, e.g. a link to the documentation of your project environment variables.
+	 * A text printed after the output of all issues.
 	 */
 	printAfter?: string;
 
