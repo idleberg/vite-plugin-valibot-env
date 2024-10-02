@@ -30,9 +30,6 @@ importers:
       eslint-plugin-unicorn:
         specifier: ^55.0.0
         version: 55.0.0(eslint@9.11.1(jiti@2.1.0))
-      execa:
-        specifier: ^8.0.1
-        version: 8.0.1
       husky:
         specifier: ^9.1.6
         version: 9.1.6
