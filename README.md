@@ -48,7 +48,7 @@ export default defineConfig({
 
 #### `options.ignoreEnvPrefix`
 
-Type: `Boolean`  
+Type: `boolean`  
 Default: `false`  
 
 Setting this to `true` will also validate unprefixed environment variables.
@@ -58,10 +58,24 @@ Setting this to `true` will also validate unprefixed environment variables.
 
 #### `options.transformValues`
 
-Type: `Boolean`  
+Type: `boolean`  
 Default: `false`  
 
 Setting this to `true` will try and transform string values to their respective types. Supports booleans, integers, floats, and `null`.
+
+#### `options.printBefore`
+
+Type: `string`  
+Default: `undefined`  
+
+A short text printed before the output of any issues.
+
+#### `options.printAfter`
+
+Type: `string`  
+Default: `undefined`  
+
+A text printed after the output of all issues, e.g. a link to the documentation of your project environment variables.
 
 ## Related
 

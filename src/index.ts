@@ -19,6 +19,16 @@ type PluginOptions = {
 	transformValues?: boolean;
 
 	/**
+	 * A text printed before the output of any issues.
+	 */
+	printBefore?: string;
+
+	/**
+	 * A text printed after the output of all issues, e.g. a link to the documentation of your project environment variables.
+	 */
+	printAfter?: string;
+
+	/**
 	 * Throws an error rather than exiting if any issues are found in the schema. This is used for testing
 	 * mostly.
 	 */
@@ -71,6 +81,10 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 				return userConfig;
 			}
 
+			if (typeof options?.printBefore === 'string') {
+				console.log(options.printBefore);
+			}
+
 			for (const issue of issues) {
 				if (typeof issue === 'undefined') {
 					continue;
@@ -79,7 +93,11 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 				logIssue(issue);
 			}
 
-			if (options.throwError) {
+			if (typeof options?.printAfter === 'string') {
+				console.log(options.printAfter);
+			}
+
+			if (options?.throwError) {
 				throw new TypeError('Invalid Valibot schema issues found.');
 			}
 
