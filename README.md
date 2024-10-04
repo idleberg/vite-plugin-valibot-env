@@ -68,7 +68,10 @@ Setting this to `true` will try and transform string values to their respective 
 Type: `string`  
 Default: `undefined`  
 
-Language ID for localized error messages. Requires `@valibot/i18n`.
+Language ID for localized error messages.
+
+> [!NOTE]
+> You need to install `@valibot/i18n` and import it into your Vite config.
 
 #### `options.onBeforeIssues`
 
