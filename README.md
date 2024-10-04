@@ -71,7 +71,7 @@ Default: `undefined`
 Language ID for localized error messages.
 
 > [!NOTE]
-> You need to install `@valibot/i18n` and import it into your Vite config.
+> When using this option, you need to install `@valibot/i18n` and import it into your Vite config.
 
 #### `options.onBeforeIssues`
 
