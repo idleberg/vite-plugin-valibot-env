@@ -68,7 +68,7 @@ Setting this to `true` will try and transform string values to their respective 
 Type: `string`  
 Default: `undefined`  
 
-Language ID for localized error messages. Requires `@valibot/i18n` to be present.
+Language ID for localized error messages. Requires `@valibot/i18n`.
 
 #### `options.printBefore`
 

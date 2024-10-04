@@ -19,7 +19,7 @@ type PluginOptions = {
 	transformValues?: boolean;
 
 	/**
-	 * Language ID for localized error messages. Requires `@valibot/i18n` to be present.
+	 * Language ID for localized error messages. Requires `@valibot/i18n`.
 	 */
 	language?: string;
 
