@@ -63,6 +63,13 @@ Default: `false`
 
 Setting this to `true` will try and transform string values to their respective types. Supports booleans, integers, floats, and `null`.
 
+#### `options.language`
+
+Type: `string`  
+Default: `undefined`  
+
+Language ID for localized error messages. Requires `@valibot/i18n` to be present.
+
 #### `options.printBefore`
 
 Type: `string`  

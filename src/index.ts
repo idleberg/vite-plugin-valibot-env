@@ -19,6 +19,11 @@ type PluginOptions = {
 	transformValues?: boolean;
 
 	/**
+	 * Language ID for localized error messages. Requires `@valibot/i18n` to be present.
+	 */
+	language?: string;
+
+	/**
 	 * A text printed before the output of any issues.
 	 */
 	printBefore?: string;
@@ -75,7 +80,14 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 			const rawEnv = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
 			const env = options.transformValues === true ? transformEnvironment(rawEnv) : rawEnv;
 
-			const { issues, success } = safeParse(schema, env);
+			const parserConfig =
+				typeof options.language !== 'string'
+					? undefined
+					: {
+							lang: options.language,
+						};
+
+			const { issues, success } = safeParse(schema, env, parserConfig);
 
 			if (success) {
 				return userConfig;
