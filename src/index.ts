@@ -24,14 +24,14 @@ type PluginOptions = {
 	language?: string;
 
 	/**
-	 * A text printed before the output of any issues.
+	 * A callback function executed after any issues have been printed.
 	 */
-	printBefore?: string;
+	onBeforeIssues?: () => void;
 
 	/**
-	 * A text printed after the output of all issues.
+	 * A callback function executed after all issues have been printed.
 	 */
-	printAfter?: string;
+	onAfterIssues?: () => void;
 
 	/**
 	 * Throws an error rather than exiting gracefully when issues have been found in the schema. This is used for testing
@@ -93,8 +93,8 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 				return userConfig;
 			}
 
-			if (typeof options?.printBefore === 'string') {
-				console.log(options.printBefore);
+			if (typeof options?.onBeforeIssues === 'function') {
+				options.onBeforeIssues();
 			}
 
 			for (const issue of issues) {
@@ -109,8 +109,8 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 				logIssue(issue);
 			}
 
-			if (typeof options?.printAfter === 'string') {
-				console.log(options.printAfter);
+			if (typeof options?.onAfterIssues === 'function') {
+				options.onAfterIssues();
 			}
 
 			exit(1);

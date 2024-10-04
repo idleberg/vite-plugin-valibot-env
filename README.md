@@ -70,19 +70,19 @@ Default: `undefined`
 
 Language ID for localized error messages. Requires `@valibot/i18n`.
 
-#### `options.printBefore`
+#### `options.onBeforeIssues`
 
-Type: `string`  
+Type: `function`  
 Default: `undefined`  
 
-A short text printed before the output of any issues.
+A callback function executed after any issues have been printed.
 
-#### `options.printAfter`
+#### `options.onAfterIssues`
 
-Type: `string`  
+Type: `function`  
 Default: `undefined`  
 
-A text printed after the output of all issues.
+A callback function executed after all issues have been printed.
 
 > [!TIP]
 > You could use this to point collaborators to the documentation of your project's environment variables.
