@@ -28,7 +28,7 @@
     "dev": "tsup --watch",
     "lint:code": "eslint **/*.json ./src/**/*.ts --no-warn-ignored",
     "lint:deps": "knip --production",
-    "lint": "concurrently --prefix '[{name}]' -c 'blue.bold,green.bold' 'npm:lint:*'",
+    "lint": "concurrently --prefix '{name}' -c 'blue,green' 'npm:lint:*'",
     "prepack": "npm run build",
     "prepare": "husky",
     "publish:jsr": "deno publish",
