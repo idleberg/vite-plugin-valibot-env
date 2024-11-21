@@ -2,8 +2,8 @@
 import eslint from '@eslint/js';
 import jsonc from 'eslint-plugin-jsonc';
 import perfectionist from 'eslint-plugin-perfectionist';
-import tseslint from 'typescript-eslint';
 import unicorn from 'eslint-plugin-unicorn';
+import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
 	eslint.configs.recommended,

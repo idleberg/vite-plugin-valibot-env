@@ -1,9 +1,9 @@
-import { cwd, exit } from 'node:process';
 import { bgRed } from 'kleur/colors';
-import { loadEnv, normalizePath, type Plugin } from 'vite';
-import { resolve } from 'node:path';
-import { safeParse, type InferIssue, type ObjectSchema } from 'valibot';
 import logSymbols from 'log-symbols';
+import { resolve } from 'node:path';
+import { cwd, exit } from 'node:process';
+import { safeParse, type InferIssue, type ObjectSchema } from 'valibot';
+import { loadEnv, normalizePath, type Plugin } from 'vite';
 
 type PluginOptions = {
 	/**

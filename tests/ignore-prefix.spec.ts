@@ -1,11 +1,12 @@
-import { build } from 'vite';
-import { cwd } from 'node:process';
+import dotenv from 'dotenv';
 import { resolve } from 'node:path';
-import { schema } from './fixtures/schema.ignore-prefix.ts';
+import { cwd } from 'node:process';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
-import dotenv from 'dotenv';
+import { build } from 'vite';
+
 import valibotPlugin from '../src/index.ts';
+import { schema } from './fixtures/schema.ignore-prefix.ts';
 
 const fixtures = resolve(cwd(), 'tests/fixtures');
 

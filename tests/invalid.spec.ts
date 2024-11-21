@@ -1,10 +1,11 @@
-import { build } from 'vite';
-import { cwd, env } from 'node:process';
 import { resolve } from 'node:path';
+import { cwd, env } from 'node:process';
 import { test } from 'uvu';
+import { build } from 'vite';
 const fixtures = resolve(cwd(), 'tests/fixtures');
 import * as assert from 'uvu/assert';
 import * as v from 'valibot';
+
 import valibotPlugin from '../src/index.ts';
 
 const invalidEnvironmentVariables = {
