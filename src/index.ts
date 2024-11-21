@@ -74,7 +74,7 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 ): Plugin {
 	return {
 		name: 'valibot-env',
-		config(userConfig, { mode }) {
+		config(userConfig, { command, isPreview, mode }) {
 			const rootDir = userConfig.root || cwd();
 			const envDir = userConfig.envDir ? normalizePath(resolve(rootDir, userConfig.envDir)) : rootDir;
 			const rawEnv = loadEnv(mode, envDir, options.ignoreEnvPrefix ? '' : userConfig.envPrefix);
@@ -113,7 +113,12 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 				options.onAfterIssues();
 			}
 
-			exit(1);
+			const isBuild = command === 'build';
+			const isPreviewServer = command === 'serve' && isPreview;
+
+			if (isBuild || isPreviewServer) {
+				exit(1);
+			}
 		},
 	};
 }
