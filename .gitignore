@@ -3,5 +3,7 @@ dist/
 .eslintcache
 
 # Development
+.env
+index.html
 /vite.config.*
-vite*.config.ts.timestamp-*.mjs
+vite*.config.ts.timestamp-*
