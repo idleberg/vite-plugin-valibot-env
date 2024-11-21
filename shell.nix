@@ -43,19 +43,6 @@
 			which
 		];
 
-		programs.git = {
-    		enable = true;
-    		lfs.enable = true;
-			aliases = {
-				co = "checkout";
-				br = "branch";
-				ci = "commit";
-				st = "status";
-				amend = "commit --amend -m";
-				unstage = "restore --staged";
-			};
-		};
-
 		shellHook = ''
 			macchina
 
@@ -73,13 +60,13 @@
 
 			if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then
 					echo "Setting up Git aliases..."
-					# git config alias.co checkout
-					# git config alias.br branch
-					# git config alias.ci commit
-					# git config alias.st status
-					# git config alias.amend "commit --amend -m"
-					# git config alias.unstage "restore --staged"
-					# git config help.autocorrect 50
+					git config alias.co checkout
+					git config alias.br branch
+					git config alias.ci commit
+					git config alias.st status
+					git config alias.amend "commit --amend -m"
+					git config alias.unstage "restore --staged"
+					git config help.autocorrect 50
 			else
 					echo "Not a Git repository."
 			fi
