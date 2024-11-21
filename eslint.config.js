@@ -1,20 +1,31 @@
 // @ts-check
 import eslint from '@eslint/js';
-import eslintPluginJsonc from 'eslint-plugin-jsonc';
-import eslintPluginUnicorn from 'eslint-plugin-unicorn';
+import jsonc from 'eslint-plugin-jsonc';
+import perfectionist from 'eslint-plugin-perfectionist';
 import tseslint from 'typescript-eslint';
+import unicorn from 'eslint-plugin-unicorn';
 
 export default tseslint.config(
 	eslint.configs.recommended,
 	...tseslint.configs.recommended,
-	...eslintPluginJsonc.configs['flat/recommended-with-json'],
+	...jsonc.configs['flat/recommended-with-json'],
 	{
 		plugins: {
-			unicorn: eslintPluginUnicorn,
+			unicorn: unicorn,
+			perfectionist,
 		},
 		rules: {
 			'@typescript-eslint/ban-ts-comment': 'off',
 			'@typescript-eslint/no-explicit-any': 'off',
+
+			 'perfectionist/sort-imports': [
+        'error',
+        {
+          type: 'natural',
+          order: 'asc',
+        },
+      ],
+
 			'unicorn/filename-case': 'error',
 			'unicorn/new-for-builtins': 'error',
 			'unicorn/prefer-node-protocol': 'error',
