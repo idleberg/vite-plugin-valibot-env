@@ -59,11 +59,11 @@
     "typescript": "^5.6.3",
     "typescript-eslint": "8.15.0",
     "uvu": "^0.5.6",
-    "valibot": "1.0.0-beta.7",
+    "valibot": "1.0.0-beta.8",
     "vite": "^6.0.0-beta.10"
   },
   "peerDependencies": {
-    "valibot": ">=0.30 <=0.42 || >=1.0.0-beta.0 <=1.0.0-beta.7",
+    "valibot": ">=0.30 <=0.42 || >=1.0.0-beta.0 <=1.0.0-beta.8",
     "vite": ">=5 <=6.0.0-beta.10"
   },
   "lint-staged": {
