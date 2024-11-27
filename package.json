@@ -41,30 +41,30 @@
   },
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",
-    "@types/node": "^22.9.1",
+    "@types/node": "^22.10.0",
     "concurrently": "^9.0.1",
     "dotenv": "^16.4.5",
     "eslint": "9.15.0",
     "eslint-plugin-jsonc": "^2.18.2",
-    "eslint-plugin-perfectionist": "^4.0.3",
+    "eslint-plugin-perfectionist": "^4.1.2",
     "eslint-plugin-unicorn": "^56.0.1",
     "husky": "^9.1.7",
-    "knip": "^5.37.1",
+    "knip": "^5.38.1",
     "lint-staged": "^15.2.10",
-    "np": "^10.0.7",
-    "prettier": "^3.3.3",
+    "np": "^10.1.0",
+    "prettier": "^3.4.1",
     "strip-ansi": "^7.1.0",
     "tsm": "^2.3.0",
     "tsup": "^8.3.5",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "8.15.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "8.16.0",
     "uvu": "^0.5.6",
     "valibot": "1.0.0-beta.8",
-    "vite": "^6.0.0-beta.10"
+    "vite": "^6.0.1"
   },
   "peerDependencies": {
     "valibot": ">=0.30 <=0.42 || >=1.0.0-beta.0 <=1.0.0-beta.8",
-    "vite": ">=5 <=6.0.0-beta.10"
+    "vite": ">=5 || >=6"
   },
   "lint-staged": {
     "*.ts": [
