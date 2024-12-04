@@ -14,13 +14,15 @@ It's generally a good idea to check that you're all set up early in the developm
 
 ## Installation
 
-`npm install -D vite-plugin-valibot-env valibot`
+```shell
+npm install -D vite-plugin-valibot-env valibot`
+```
 
 ## Usage
 
 Let's start with a very basic example
 
-```ts
+```javascript
 import { defineConfig } from 'vite';
 import * as v from 'valibot';
 import valibot from 'vite-plugin-valibot-env';
