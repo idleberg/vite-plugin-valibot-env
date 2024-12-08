@@ -36,7 +36,7 @@
     "test": "uvu tests --require tsm --ignore \"fixtures\" --ignore \"helper.ts\""
   },
   "dependencies": {
-    "log-symbols": "^7.0.0"
+    "is-unicode-supported": "^2.1.0"
   },
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",

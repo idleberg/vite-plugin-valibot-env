@@ -1,4 +1,4 @@
-import logSymbols from 'log-symbols';
+import isUnicodeSupported from 'is-unicode-supported';
 import { resolve } from 'node:path';
 import { cwd, exit } from 'node:process';
 import { safeParse, type InferIssue, type ObjectSchema } from 'valibot';
@@ -128,18 +128,6 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 
 // HELPERS
 
-const open = '\u001B[41m';
-const close = `\u001B[49m`;
-
-/**
- * Wrap string in ANSI escape sequences for red background colour.
- * @param input
- * @returns
- */
-export function bgRed(input: string): string {
-	return `${open}${input}${close}`;
-}
-
 /**
  * Logger for printing well-formed schema issues.
  * @param issue
@@ -150,9 +138,11 @@ function logIssue(issue: InferIssue<any>) {
 		return;
 	}
 
-	const label = bgRed(` ${issue.path[0].key} `);
+	const label = ['\u001B[41m', issue.path[0].key, '\u001B[49m'].join(' ');
 
-	console.error(logSymbols.error, label, issue.message);
+	const symbol = ['\u001B[31m', isUnicodeSupported() ? '✖️' : '×', '\u001B[39m'].join('');
+
+	console.error(symbol, label, issue.message);
 }
 
 /**

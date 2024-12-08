@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      log-symbols:
-        specifier: ^7.0.0
-        version: 7.0.0
+      is-unicode-supported:
+        specifier: ^2.1.0
+        version: 2.1.0
     devDependencies:
       '@total-typescript/tsconfig':
         specifier: ^1.0.4
