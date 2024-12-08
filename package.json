@@ -36,7 +36,6 @@
     "test": "uvu tests --require tsm --ignore \"fixtures\" --ignore \"helper.ts\""
   },
   "dependencies": {
-    "kleur": "^4.1.5",
     "log-symbols": "^7.0.0"
   },
   "devDependencies": {

@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      kleur:
-        specifier: ^4.1.5
-        version: 4.1.5
       log-symbols:
         specifier: ^7.0.0
         version: 7.0.0

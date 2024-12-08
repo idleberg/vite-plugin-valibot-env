@@ -1,9 +1,10 @@
-import { bgRed } from 'kleur/colors';
 import logSymbols from 'log-symbols';
 import { resolve } from 'node:path';
 import { cwd, exit } from 'node:process';
 import { safeParse, type InferIssue, type ObjectSchema } from 'valibot';
 import { loadEnv, normalizePath, type Plugin } from 'vite';
+
+// TYPES
 
 type PluginOptions = {
 	/**
@@ -39,6 +40,8 @@ type PluginOptions = {
 	 */
 	throwError?: boolean;
 };
+
+// EXPORT
 
 /**
  * Exports a Vite plugin that validates environment variables against a schema.
@@ -121,6 +124,20 @@ export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = Obje
 			}
 		},
 	};
+}
+
+// HELPERS
+
+const open = '\u001B[41m';
+const close = `\u001B[49m`;
+
+/**
+ * Wrap string in ANSI escape sequences for red background colour.
+ * @param input
+ * @returns
+ */
+export function bgRed(input: string): string {
+	return `${open}${input}${close}`;
 }
 
 /**
