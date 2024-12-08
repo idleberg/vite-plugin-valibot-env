@@ -139,7 +139,6 @@ function logIssue(issue: InferIssue<any>) {
 	}
 
 	const label = ['\u001B[41m', issue.path[0].key, '\u001B[49m'].join(' ');
-
 	const symbol = ['\u001B[31m', isUnicodeSupported() ? '✖️' : '×', '\u001B[39m'].join('');
 
 	console.error(symbol, label, issue.message);
