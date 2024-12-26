@@ -43,7 +43,7 @@
     "@types/node": "^22.10.2",
     "concurrently": "^9.1.0",
     "dotenv": "^16.4.7",
-    "eslint": "9.15.0",
+    "eslint": "9.17.0",
     "eslint-plugin-jsonc": "^2.18.2",
     "eslint-plugin-perfectionist": "^4.4.0",
     "eslint-plugin-unicorn": "^56.0.1",
@@ -56,10 +56,10 @@
     "tsm": "^2.3.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
-    "typescript-eslint": "8.16.0",
+    "typescript-eslint": "8.18.2",
     "uvu": "^0.5.6",
     "valibot": "1.0.0-beta.9",
-    "vite": "^6.0.5"
+    "vite": "^6.0.6"
   },
   "peerDependencies": {
     "valibot": ">=0.30 <2.0.0",
@@ -71,5 +71,5 @@
       "prettier --cache --write"
     ]
   },
-  "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387"
+  "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
 }
