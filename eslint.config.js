@@ -1,11 +1,11 @@
-// @ts-check
 import eslint from '@eslint/js';
 import jsonc from 'eslint-plugin-jsonc';
 import perfectionist from 'eslint-plugin-perfectionist';
 import unicorn from 'eslint-plugin-unicorn';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+/** @type {import('eslint').Linter.Config[]} */
+const config = [
 	eslint.configs.recommended,
 	...tseslint.configs.recommended,
 	...jsonc.configs['flat/recommended-with-json'],
@@ -37,4 +37,6 @@ export default tseslint.config(
 			'jsonc/no-comments': 'off'
 		}
 	},
-);
+];
+
+export default config;
