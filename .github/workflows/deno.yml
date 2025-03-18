@@ -34,7 +34,7 @@ jobs:
 
     - uses: denoland/setup-deno@909cc5acb0fdd60627fb858598759246509fa755 # v2.0.2
       with:
-        deno-version: v2.x
+        deno-version: v1.x
 
     - uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
       name: Set up Deno cache
