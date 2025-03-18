@@ -39,7 +39,7 @@ jobs:
 
     - name: Enable Corepack
       run: |
-        corepack prepare pnpm@10.0.0 --activate
+        corepack prepare pnpm@9.15.3 --activate
         corepack enable
 
     - name: Get pnpm store directory
