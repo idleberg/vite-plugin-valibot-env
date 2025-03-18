@@ -15,7 +15,7 @@ It's generally a good idea to check that you're all set up early in the developm
 ## Installation
 
 ```shell
-npm install -D vite-plugin-valibot-env valibot`
+npm install -D vite-plugin-valibot-env valibot
 ```
 
 ## Usage
