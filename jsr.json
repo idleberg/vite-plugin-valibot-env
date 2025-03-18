@@ -1,6 +1,6 @@
 {
 	"name": "@idleberg/vite-plugin-valibot-env",
-	"version": "0.9.3",
+	"version": "0.9.4",
 	"exports": "./src/index.ts",
 	"publish": {
 		"include": [
