@@ -90,7 +90,7 @@ Default: `undefined`
 A callback function executed after all issues have been printed.
 
 > [!TIP]
-> You could use this to point collaborators to the documentation of your project's environment variables.
+> This can be useful to point collaborators to the documentation of your project's environment variables.
 
 #### `options.throwError`
 
@@ -98,7 +98,7 @@ Type: `boolean`
 Default: `false`  
 
 > [!CAUTION]
-> This option exists for testing purposes and is not recommended for use.
+> This option exists for testing purposes and is not recommended for other use.
 
 Throws an error rather than exiting gracefully when issues have been found in the schema.
 
