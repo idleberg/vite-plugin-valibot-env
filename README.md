@@ -10,7 +10,7 @@
 
 ## Why?
 
-It's generally a good idea to check that you're all set up early in the development process. Validating that your environment variables have been defined and are of the expected type is a part of that – for yourself and your colleagues. While there are _many_ libraries to validate against a schema, [Valibot](https://valibot.dev/) stands out for its versatility and modularity. The small footprint makes it an ideal candidate for validation in the frontend. So why not use it in your development process as well?
+It's generally a good idea to check that you're all set up early in the development process. Validating that your environment variables have been defined and are of the expected type is a part of that – for yourself and your colleagues. While there are _many_ libraries to validate against a schema, [Valibot](https://valibot.dev/) stands out for its versatility and modularity. The small footprint already makes it an ideal candidate for validation in the frontend. So why not use it in your development process as well?
 
 ## Installation
 
@@ -90,7 +90,7 @@ Default: `undefined`
 A callback function executed after all issues have been printed.
 
 > [!TIP]
-> You could use this to point collaborators to the documentation of your project's environment variables.
+> This can be useful to point collaborators to the documentation of your project's environment variables.
 
 #### `options.throwError`
 
@@ -98,7 +98,7 @@ Type: `boolean`
 Default: `false`  
 
 > [!CAUTION]
-> This option exists for testing purposes and is not recommended for use.
+> This option exists for testing purposes and is not recommended for other use.
 
 Throws an error rather than exiting gracefully when issues have been found in the schema.
 
