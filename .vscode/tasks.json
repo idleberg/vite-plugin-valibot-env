@@ -19,9 +19,7 @@
 			"label": "Open Shell",
 			"type": "shell",
 			"command": "eval",
-			"args": [
-				"$SHELL"
-			],
+			"args": ["$SHELL"],
 			"presentation": {
 				"clear": true,
 				"focus": true,
