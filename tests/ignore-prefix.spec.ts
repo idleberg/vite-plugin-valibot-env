@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
 import { resolve } from 'node:path';
 import { cwd } from 'node:process';
+import dotenv from 'dotenv';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 import { build } from 'vite';
@@ -14,7 +14,7 @@ dotenv.config({
 	path: resolve(fixtures, '.env.ignore-prefix'),
 });
 
-test(`Testing valid environment variables`, async () => {
+test('Testing valid environment variables', async () => {
 	await build({
 		envPrefix: 'PLUGIN_TEST__',
 		plugins: [

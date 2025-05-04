@@ -52,7 +52,7 @@ const invalidEnvironmentVariables = {
 	PLUGIN_TEST__INVALID_UUID: 'UUID',
 };
 
-Object.entries(invalidEnvironmentVariables).forEach(([key, type]) => {
+for (const [key, type] of Object.entries(invalidEnvironmentVariables)) {
 	test(`Testing invalid environment variable ${key}`, async () => {
 		const schema = v.object({
 			[key]: v.undefined_(),
@@ -77,5 +77,5 @@ Object.entries(invalidEnvironmentVariables).forEach(([key, type]) => {
 			assert.match((error as TypeError).message, `Invalid type: Expected undefined but received "${type}"`);
 		}
 	});
-});
+}
 test.run();

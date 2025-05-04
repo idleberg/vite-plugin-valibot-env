@@ -67,6 +67,8 @@ type PluginOptions = {
  * });
  * ```
  */
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export default function ValibotEnvPlugin<T extends ObjectSchema<any, any> = ObjectSchema<any, any>>(
 	schema: T,
 	options: PluginOptions = {
