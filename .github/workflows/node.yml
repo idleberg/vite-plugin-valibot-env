@@ -61,7 +61,7 @@ jobs:
           pnpm install ${{ matrix.vite-version }}
 
       - name: Lint Source
-        run: pnpm run biome ci
+        run: pnpm exec biome ci
 
       - name: Build Source
         run: pnpm run --if-present build
