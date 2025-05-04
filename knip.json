@@ -1,6 +1,3 @@
 {
-	"ignore": [
-		".husky/**",
-		"tests/**"
-	]
+	"ignore": [".husky/**", "tests/**"]
 }
