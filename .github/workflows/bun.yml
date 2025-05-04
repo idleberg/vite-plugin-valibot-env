@@ -1,22 +1,22 @@
-name: 'Run tests on Bun'
+name: "Run tests on Bun"
 
 on:
   push:
     paths:
-    - '.github/workflows/bun.yml'
-    - 'src/**'
-    - 'tests/**'
-    - 'types/**'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+      - ".github/workflows/bun.yml"
+      - "src/**"
+      - "tests/**"
+      - "types/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
   pull_request:
     paths:
-    - '.github/workflows/bun.yml'
-    - 'src/**'
-    - 'tests/**'
-    - 'types/**'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+      - ".github/workflows/bun.yml"
+      - "src/**"
+      - "tests/**"
+      - "types/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
   workflow_dispatch:
 
 jobs:
@@ -25,32 +25,32 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        vite-version: ['vite@5', 'vite@6']
+        vite-version: ["vite@5", "vite@6"]
 
     steps:
-    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      with:
-        fetch-depth: 10
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 10
 
-    - uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2.0.1
+      - uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2.0.1
 
-    - uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
-      name: Set up Bun cache
-      with:
-        path: |
-          ~/.bun/install/cache
-        key: ${{ runner.os }}-bun-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+        name: Set up Bun cache
+        with:
+          path: |
+            ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/pnpm-lock.yaml') }}
 
-    - name: Install dependencies
-      run: |
-        bun install --frozen-lockfile --strict-peer-dependencies
-        bun install ${{ matrix.vite-version }}
+      - name: Install dependencies
+        run: |
+          bun install --frozen-lockfile --strict-peer-dependencies
+          bun install ${{ matrix.vite-version }}
 
-    - name: Lint Source
-      run: bun run --if-present lint
+      - name: Lint Source
+        run: bun run biome ci
 
-    - name: Build Source
-      run: bun run --if-present build
+      - name: Build Source
+        run: bun run --if-present build
 
-    - name: Run Tests
-      run: bun run --if-present test
+      - name: Run Tests
+        run: bun run --if-present test

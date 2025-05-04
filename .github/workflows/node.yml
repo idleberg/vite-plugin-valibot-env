@@ -39,7 +39,7 @@ jobs:
 
     - name: Enable Corepack
       run: |
-        corepack prepare pnpm@9.15.3 --activate
+          npm install --global corepack@latest
         corepack enable
 
     - name: Get pnpm store directory
@@ -61,7 +61,7 @@ jobs:
         pnpm install ${{ matrix.vite-version }}
 
     - name: Lint Source
-      run: pnpm run --if-present lint
+      run: pnpm run biome ci
 
     - name: Build Source
       run: pnpm run --if-present build
