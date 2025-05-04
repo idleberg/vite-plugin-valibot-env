@@ -1,22 +1,22 @@
-name: 'Run tests on NodeJS'
+name: "Run tests on NodeJS"
 
 on:
   push:
     paths:
-    - '.github/workflows/node.yml'
-    - 'src/**'
-    - 'tests/**'
-    - 'types/**'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+      - ".github/workflows/node.yml"
+      - "src/**"
+      - "tests/**"
+      - "types/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
   pull_request:
     paths:
-    - '.github/workflows/node.yml'
-    - 'src/**'
-    - 'tests/**'
-    - 'types/**'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+      - ".github/workflows/node.yml"
+      - "src/**"
+      - "tests/**"
+      - "types/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
   workflow_dispatch:
 
 jobs:
@@ -25,46 +25,46 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['lts/*', '*']
-        vite-version: ['vite@5', 'vite@6']
+        node-version: ["lts/*", "*"]
+        vite-version: ["vite@5", "vite@6"]
 
     steps:
-    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      with:
-        fetch-depth: 10
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 10
 
-    - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.0.3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.0.3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Enable Corepack
-      run: |
+      - name: Enable Corepack
+        run: |
           npm install --global corepack@latest
-        corepack enable
+          corepack enable
 
-    - name: Get pnpm store directory
-      id: pnpm-cache
-      run: |
-        echo "::set-output name=pnpm_store_path::$(pnpm store path)"
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_store_path::$(pnpm store path)"
 
-    - uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
-      name: Set up pnpm cache
-      with:
-        path: ${{ steps.pnpm-cache.outputs.pnpm_store_path }}
-        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-pnpm-store-
+      - uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        name: Set up pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_store_path }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-    - name: Install dependencies
-      run: |
-        pnpm install --frozen-lockfile --strict-peer-dependencies
-        pnpm install ${{ matrix.vite-version }}
+      - name: Install dependencies
+        run: |
+          pnpm install --frozen-lockfile --strict-peer-dependencies
+          pnpm install ${{ matrix.vite-version }}
 
-    - name: Lint Source
-      run: pnpm run biome ci
+      - name: Lint Source
+        run: pnpm run biome ci
 
-    - name: Build Source
-      run: pnpm run --if-present build
+      - name: Build Source
+        run: pnpm run --if-present build
 
-    - name: Run Tests
-      run: pnpm run --if-present test
+      - name: Run Tests
+        run: pnpm run --if-present test
