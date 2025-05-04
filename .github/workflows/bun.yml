@@ -47,7 +47,7 @@ jobs:
           bun install ${{ matrix.vite-version }}
 
       - name: Lint Source
-        run: bun exec @biomejs/biome ci
+        run: bun exec biome ci
 
       - name: Build Source
         run: bun run --if-present build
