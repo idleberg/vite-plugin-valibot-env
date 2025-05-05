@@ -9,7 +9,7 @@
 	pkgs.mkShell {
 		packages = with pkgs; [
 			# Core Tools
-			corepack_22
+			corepack
 			curl
 			deno
 			docker
@@ -17,7 +17,7 @@
 			git
 			git-lfs
 			mkcert
-			nodejs_22
+			nodejs
 			openssh
 
 			# Code Editors
