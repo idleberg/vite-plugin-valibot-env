@@ -15,7 +15,7 @@ It's generally a good idea to check that you're all set up early in the developm
 ## Installation
 
 ```shell
-npm install -D vite-plugin-valibot-env valibot
+npm install -vite-plugin-valibot-env valibot
 ```
 
 ## Usage
@@ -23,19 +23,17 @@ npm install -D vite-plugin-valibot-env valibot
 Let's start with a very basic example
 
 ```javascript
-import { defineConfig } from 'vite';
-import * as v from 'valibot';
-import valibot from 'vite-plugin-valibot-env';
+import { defineConfig } from "vite";
+import * as v from "valibot";
+import valibot from "vite-plugin-valibot-env";
 
 const schema = v.object({
 	VITE_API_ENDPOINT: v.pipe(v.string(), v.url()),
-	VITE_LOCALE: v.literal('en_US'),
+	VITE_LOCALE: v.literal("en_US"),
 });
 
 export default defineConfig({
-	plugins: [
-		valibot(schema),
-	]
+	plugins: [valibot(schema)],
 });
 ```
 
@@ -51,24 +49,24 @@ export default defineConfig({
 #### `options.ignoreEnvPrefix`
 
 Type: `boolean`  
-Default: `false`  
+Default: `false`
 
 Setting this to `true` will also validate unprefixed environment variables.
 
 > [!TIP]
-> Vite uses a [prefix](https://vitejs.dev/config/shared-options.html#envprefix) to prevent leaking all environment variables into your code. The same limitation applies to the validator. However, there might be use cases where you want validate unprefixed environment variables as well, e.g. `HOST` and `PORT` to configure the Vite server. 
+> Vite uses a [prefix](https://vitejs.dev/config/shared-options.html#envprefix) to prevent leaking all environment variables into your code. The same limitation applies to the validator. However, there might be use cases where you want validate unprefixed environment variables as well, e.g. `HOST` and `PORT` to configure the Vite server.
 
 #### `options.transformValues`
 
 Type: `boolean`  
-Default: `false`  
+Default: `false`
 
 Setting this to `true` will try and transform string values to their respective types. Supports booleans, integers, floats, and `null`.
 
 #### `options.language`
 
 Type: `string`  
-Default: `undefined`  
+Default: `undefined`
 
 Language ID for localized error messages.
 
@@ -78,14 +76,14 @@ Language ID for localized error messages.
 #### `options.onBeforeIssues`
 
 Type: `function`  
-Default: `undefined`  
+Default: `undefined`
 
 A callback function executed after any issues have been printed.
 
 #### `options.onAfterIssues`
 
 Type: `function`  
-Default: `undefined`  
+Default: `undefined`
 
 A callback function executed after all issues have been printed.
 
@@ -95,7 +93,7 @@ A callback function executed after all issues have been printed.
 #### `options.throwError`
 
 Type: `boolean`  
-Default: `false`  
+Default: `false`
 
 > [!CAUTION]
 > This option exists for testing purposes and is not recommended for other use.
