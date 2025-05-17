@@ -14,7 +14,7 @@ It's generally a good idea to check that you're all set up early in the developm
 
 ## Installation
 
-Use npm to install for NodeJS or Bun
+On NodeJS or Bun you can install from npm
 
 ```shell
 npm install -vite-plugin-valibot-env valibot
