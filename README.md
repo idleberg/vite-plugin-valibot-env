@@ -14,8 +14,16 @@ It's generally a good idea to check that you're all set up early in the developm
 
 ## Installation
 
+Use npm to install for NodeJS or Bun
+
 ```shell
 npm install -vite-plugin-valibot-env valibot
+```
+
+On Deno you can install using JSR
+
+```shell
+deno add jsr:@idleberg/vite-plugin-valibot-env
 ```
 
 ## Usage
