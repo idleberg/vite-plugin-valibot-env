@@ -23,7 +23,7 @@ npm install -vite-plugin-valibot-env valibot
 On Deno you can install using JSR
 
 ```shell
-deno add jsr:@idleberg/vite-plugin-valibot-env
+deno add jsr:@idleberg/vite-plugin-valibot-env valibot
 ```
 
 ## Usage
