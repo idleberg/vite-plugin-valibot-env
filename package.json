@@ -30,6 +30,7 @@
 		"lint:deps": "knip --production",
 		"lint": "concurrently --prefix '{name}' -c 'blue,green' 'npm:lint:*'",
 		"prepack": "npm run build",
+		"prepare": "lefthook install",
 		"publish:jsr": "deno publish",
 		"publish:npm": "np --no-yarn --any-branch",
 		"test": "uvu tests --require tsm --ignore \"fixtures\" --ignore \"helper.ts\""
