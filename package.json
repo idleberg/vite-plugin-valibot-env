@@ -24,8 +24,8 @@
 		"README.md"
 	],
 	"scripts": {
-		"build": "tsup",
-		"dev": "tsup --watch",
+		"build": "tsdown",
+		"dev": "tsdown --watch",
 		"lint:code": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
 		"lint:deps": "knip --production",
 		"lint": "concurrently --prefix '{name}' -c 'blue,green' 'npm:lint:*'",
@@ -50,8 +50,8 @@
 		"lefthook": "^1.11.12",
 		"np": "^10.2.0",
 		"strip-ansi": "^7.1.0",
+		"tsdown": "^0.12.4",
 		"tsm": "^2.3.0",
-		"tsup": "^8.4.0",
 		"typescript": "^5.8.3",
 		"uvu": "^0.5.6",
 		"valibot": "^1.1.0",

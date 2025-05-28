@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 export default defineConfig((options) => {
 	const isProduction = options.watch !== true;
@@ -10,6 +10,5 @@ export default defineConfig((options) => {
 		entry: ['src/index.ts'],
 		format: 'esm',
 		minify: isProduction,
-		treeshake: 'recommended',
 	};
 });
