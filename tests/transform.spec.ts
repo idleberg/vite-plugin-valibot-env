@@ -5,7 +5,7 @@ import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 import { build } from 'vite';
 
-import valibotPlugin from '../src/index.ts';
+import valibotPlugin from '../src/plugin.ts';
 import { schema } from './fixtures/schema.transform.ts';
 
 const fixtures = resolve(cwd(), 'tests/fixtures');

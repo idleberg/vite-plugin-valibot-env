@@ -7,7 +7,7 @@ export default defineConfig((options) => {
 		target: 'node18',
 		clean: isProduction,
 		dts: isProduction,
-		entry: ['src/index.ts'],
+		entry: ['src/plugin.ts'],
 		format: 'esm',
 		minify: isProduction,
 	};

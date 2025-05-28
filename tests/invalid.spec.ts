@@ -6,7 +6,7 @@ const fixtures = resolve(cwd(), 'tests/fixtures');
 import * as assert from 'uvu/assert';
 import * as v from 'valibot';
 
-import valibotPlugin from '../src/index.ts';
+import valibotPlugin from '../src/plugin.ts';
 
 const invalidEnvironmentVariables = {
 	PLUGIN_TEST__INVALID_BIC: 'BIC',
