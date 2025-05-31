@@ -13,7 +13,10 @@
 		"valibot"
 	],
 	"type": "module",
-	"exports": "./dist/plugin.js",
+	"exports": {
+		"import" :"./dist/plugin.js",
+		"types" :"./dist/plugin.d.ts"
+	},
 	"types": "./dist/plugin.d.ts",
 	"engines": {
 		"node": "^18.0.0 || ^20.0.0 || >=22.0.0"
