@@ -35,7 +35,7 @@
 		"prepack": "npm run build",
 		"prepare": "lefthook install",
 		"publish:jsr": "deno publish",
-		"publish:npm": "np --no-yarn --any-branch",
+		"publish:npm": "np --no-yarn",
 		"test": "uvu tests --require tsm --ignore \"fixtures\" --ignore \"helper.ts\""
 	},
 	"dependencies": {
