@@ -45,7 +45,7 @@ jobs:
           key: ${{ runner.os }}-deno-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install Vite
-        run: deno cache npm:${{ matrix.vite-version }} --allow-scripts
+        run: deno cache npm:${{ matrix.vite-version }} --allow-scripts --node-modules-dir auto
 
       - name: Lint Source
         run: deno run --allow-all npm:biome ci
