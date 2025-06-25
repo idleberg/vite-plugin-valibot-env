@@ -2,7 +2,7 @@ import { resolve } from 'node:path';
 import { cwd, exit } from 'node:process';
 import isUnicodeSupported from 'is-unicode-supported';
 import { type InferIssue, type ObjectSchema, safeParse } from 'valibot';
-import { type Plugin, loadEnv, normalizePath } from 'vite';
+import { loadEnv, normalizePath, type Plugin } from 'vite';
 
 // TYPES
 
