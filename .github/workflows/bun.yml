@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        vite-version: ["vite@5", "vite@6"]
+        vite-version: ["vite@5", "vite@6", "vite@7"]
 
     steps:
       - uses: actions/checkout@v4
