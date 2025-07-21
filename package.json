@@ -6,7 +6,7 @@
 	"author": "Jan T. Sott",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/idleberg/vite-plugin-valibot-env"
+		"url": "git+https://github.com/idleberg/vite-plugin-valibot-env.git"
 	},
 	"keywords": [
 		"vite-plugin",
@@ -14,8 +14,8 @@
 	],
 	"type": "module",
 	"exports": {
-		"import": "./dist/plugin.js",
-		"types": "./dist/plugin.d.ts"
+		"types": "./dist/plugin.d.ts",
+		"import": "./dist/plugin.js"
 	},
 	"types": "./dist/plugin.d.ts",
 	"engines": {
