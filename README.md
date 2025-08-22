@@ -86,7 +86,7 @@ Language ID for localized error messages.
 Type: `function`  
 Default: `undefined`
 
-A callback function executed after any issues have been printed.
+A callback function executed before any issues have been printed.
 
 #### `options.onAfterIssues`
 
