@@ -69,7 +69,7 @@ Setting this to `true` will also validate unprefixed environment variables.
 Type: `boolean`  
 Default: `false`
 
-Setting this to `true` will try and transform string values to their respective types. Supports booleans, integers, floats, and `null`.
+Setting this to `true` will try and transform certain string values to their respective types. Supports booleans, integers, floats, and `null`.
 
 #### `options.language`
 
@@ -86,7 +86,7 @@ Language ID for localized error messages.
 Type: `function`  
 Default: `undefined`
 
-A callback function executed after any issues have been printed.
+A callback function executed before any issues have been printed.
 
 #### `options.onAfterIssues`
 
