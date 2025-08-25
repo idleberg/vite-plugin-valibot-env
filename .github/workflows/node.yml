@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ["lts/*", "*"]
+        node-version: ["lts/*", "latest"]
         vite-version: ["vite@5", "vite@6", "vite@7"]
 
     steps:
