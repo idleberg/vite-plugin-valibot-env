@@ -8,11 +8,11 @@
 [![CI: Node](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/node.yml?logo=nodedotjs&logoColor=white&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions/workflows/node.yml)
 [![CI: Deno](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-valibot-env/deno.yml?logo=deno&logoColor=white&style=for-the-badge)](https://github.com/idleberg/vite-plugin-valibot-env/actions/workflows/deno.yml)
 
-## Why?
+## Why? 🤔
 
 It's generally a good idea to check that you're all set up early in the development process. Validating that your environment variables have been defined and are of the expected type is a part of that – for yourself and your colleagues. While there are _many_ libraries to validate against a schema, [Valibot](https://valibot.dev/) stands out for its versatility and modularity. The small footprint already makes it an ideal candidate for validation in the frontend. So why not use it in your development process as well?
 
-## Installation
+## Installation 💿
 
 On NodeJS or Bun you can install from npm
 
@@ -26,7 +26,7 @@ On Deno you can install using JSR
 deno add jsr:@idleberg/vite-plugin-valibot-env valibot
 ```
 
-## Usage
+## Usage 🚀
 
 Let's start with a very basic example
 
@@ -48,7 +48,7 @@ export default defineConfig({
 > [!TIP]
 > You might want to use [`loadEnv`](https://v4.vitejs.dev/config/#using-environment-variables-in-config) in your configuration to load `.env` files.
 
-### API
+### API ⚙️
 
 `valibot(schema, options?)`
 
@@ -108,10 +108,10 @@ Default: `false`
 
 Throws an error rather than exiting gracefully when issues have been found in the schema.
 
-## Related
+## Related 👫
 
 - [esbuild-plugin-valibot-env](https://github.com/idleberg/esbuild-plugin-valibot-env)
 
-## License
+## License 📜
 
 This work is licensed under [The MIT License](LICENSE).
