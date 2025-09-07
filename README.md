@@ -112,6 +112,6 @@ Throws an error rather than exiting gracefully when issues have been found in th
 
 - [esbuild-plugin-valibot-env](https://github.com/idleberg/esbuild-plugin-valibot-env)
 
-## License 📜
+## License ©️
 
 This work is licensed under [The MIT License](LICENSE).
