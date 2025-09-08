@@ -45,9 +45,6 @@ export default defineConfig({
 });
 ```
 
-> [!TIP]
-> You might want to use [`loadEnv`](https://v4.vitejs.dev/config/#using-environment-variables-in-config) in your configuration to load `.env` files.
-
 ### API ⚙️
 
 `valibot(schema, options?)`
