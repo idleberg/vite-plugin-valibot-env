@@ -45,6 +45,7 @@
 		"@biomejs/biome": "^2.0.5",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
+		"@idleberg/configs": "^0.1.0",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/node": "^22.15.11",
 		"concurrently": "^9.2.0",
