@@ -42,6 +42,7 @@
 		"is-unicode-supported": "^2.1.0"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^2.2.4",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
 		"@idleberg/configs": "^0.2.0",
