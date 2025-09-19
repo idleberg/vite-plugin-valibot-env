@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .eslintcache
+deno.lock
 
 # Development
 .env
