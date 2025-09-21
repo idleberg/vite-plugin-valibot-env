@@ -13,7 +13,7 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -28,6 +28,14 @@ jobs:
             ~/.deno
             ~/.cache/deno
           key: ${{ runner.os }}-deno-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Install Dependencies
+        run: |
+          deno install \
+          --allow-scripts \
+          --node-modules-dir=auto \
+          --no-lock
+
       - run: |
           deno lint \
             --ignore=node_modules src tests \
