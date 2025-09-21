@@ -51,7 +51,7 @@ jobs:
           --node-modules-dir=auto
 
       - name: Lint Source
-        run: deno run --allow-all npm:biome ci
+        run: deno run --allow-all npm:@biomejs/biome ci
 
       - name: Run Tests
         run: deno run --allow-all npm:uvu tests
