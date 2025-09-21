@@ -48,7 +48,8 @@ jobs:
         run: |
           deno cache npm:${{ matrix.vite-version }} \
           --allow-scripts \
-          --node-modules-dir=auto
+          --node-modules-dir=auto \
+          --no-lock
 
       - name: Lint Source
         run: deno run --allow-all npm:@biomejs/biome ci
