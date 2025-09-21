@@ -37,10 +37,7 @@ jobs:
           --no-lock
 
       - run: |
-          deno lint \
-            --ignore=node_modules src tests \
-            --rules-exclude=no-explicit-any \
-            ./*.ts tests/**/*.ts
+          deno run --allow-all npm:@biomejs/biome ci
 
           deno publish --dry-run
           deno publish
