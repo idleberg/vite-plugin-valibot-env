@@ -56,6 +56,7 @@
           which
         ];
         shellHook = ''
+          clear
           macchina
 
           echo "Setting up environment variables..."
@@ -70,25 +71,25 @@
           alias vim=nvim
 
           if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-            echo "Setting up Git..."
-            git config alias.co checkout
-            git config alias.br branch
-            git config alias.ci commit
-            git config alias.st status
-            git config alias.amend "commit --amend -m"
-            git config alias.unstage "restore --staged"
-            git config help.autocorrect 50
+          echo "Setting up Git..."
+          git config alias.co checkout
+          git config alias.br branch
+          git config alias.ci commit
+          git config alias.st status
+          git config alias.amend "commit --amend -m"
+          git config alias.unstage "restore --staged"
+          git config help.autocorrect 50
           else
-            gum log -sl warn "Not inside a Git repository, skipping config setup"
+          gum log -sl warn "Not inside a Git repository, skipping config setup"
           fi
 
           if [ -f "package.json" ]; then
-            corepack install
-            pnpm install --frozen-lockfile
+          corepack install
+          pnpm install --frozen-lockfile
 
-            echo -e "\nCurrent Project: $(jq -r '.name' package.json)"
+          echo -e "\nCurrent Project: $(jq -r '.name' package.json)"
           else
-            gum log -sl warn "No package.json found, skipping installation step"
+          gum log -sl warn "No package.json found, skipping installation step"
           fi
         '';
       };
