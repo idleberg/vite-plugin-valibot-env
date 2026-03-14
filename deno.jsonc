@@ -8,5 +8,8 @@
 	},
 	"publish": {
 		"include": ["src/", "deno.jsonc", "LICENSE", "README.md"]
+	},
+	"compilerOptions": {
+		"lib": ["deno.window"]
 	}
 }
