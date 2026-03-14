@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 0
+          fetch-depth: 10
 
       - uses: denoland/setup-deno@v2
         with:
@@ -29,15 +29,7 @@ jobs:
             ~/.cache/deno
           key: ${{ runner.os }}-deno-${{ hashFiles('**/pnpm-lock.yaml') }}
 
-      - name: Install Dependencies
-        run: |
-          deno install \
-          --allow-scripts \
-          --node-modules-dir=auto \
-          --no-lock
-
       - run: |
-          deno run --allow-all npm:@biomejs/biome ci
-
+          deno install --no-lock --npm
           deno publish --dry-run
           deno publish
