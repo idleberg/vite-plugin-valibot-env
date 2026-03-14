@@ -3,7 +3,7 @@
 	"version": "1.0.1",
 	"exports": "./src/plugin.ts",
 	"imports": {
-		"valibot": "npm:@valibot@^1.2.0",
+		"valibot": "npm:valibot@^1.2.0",
 		"vite": "npm:vite@^8.0.0"
 	},
 	"publish": {
