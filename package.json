@@ -14,10 +14,10 @@
 	],
 	"type": "module",
 	"exports": {
-		"types": "./dist/plugin.d.ts",
-		"import": "./dist/plugin.js"
+		"types": "./dist/plugin.d.mts",
+		"import": "./dist/plugin.mjs"
 	},
-	"types": "./dist/plugin.d.ts",
+	"types": "./dist/plugin.d.mts",
 	"engines": {
 		"node": "^20.19.0 || >=22.12.0"
 	},
